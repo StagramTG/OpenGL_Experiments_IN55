@@ -48,4 +48,6 @@ void OglWindow::render()
 	vao->bind();
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 	vao->unbind();
+
+	shader->done();
 }

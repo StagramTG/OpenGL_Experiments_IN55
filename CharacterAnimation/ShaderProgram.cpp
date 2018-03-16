@@ -114,6 +114,12 @@ namespace mjt
 	{
 		glUseProgram(m_id);
 	}
+
+	void ShaderProgram::done()
+	{
+		glUseProgram(0);
+	}
+
 	GLuint ShaderProgram::getUniformLocation(const char* name)
 	{
 		GLuint location = glGetUniformLocation(m_id, name);

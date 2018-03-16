@@ -20,6 +20,7 @@ namespace mjt
 
 		bool init(const char* vertex_file, const char* fragment_file);
 		void use();
+		void done();
 
 		GLuint getUniformLocation(const char* name);
 		void setUniformMat4(GLuint location, glm::mat4 mvp);
