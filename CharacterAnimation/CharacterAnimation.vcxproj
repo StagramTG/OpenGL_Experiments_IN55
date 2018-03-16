@@ -127,6 +127,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BufferObject.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OglWindow.cpp" />
     <ClCompile Include="OglWindowAbs.cpp" />
@@ -136,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BufferObject.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="OglWindow.h" />
     <ClInclude Include="OglWindowAbs.h" />
     <ClInclude Include="ShaderProgram.h" />
