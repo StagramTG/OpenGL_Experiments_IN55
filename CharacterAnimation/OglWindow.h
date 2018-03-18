@@ -5,6 +5,7 @@
 #include "VertexBufferObject.h"
 #include "ShaderProgram.h"
 #include "PerspectiveCamera.h"
+#include "IndicesBufferObject.h"
 
 class OglWindow: public mjt::OglWindowAbs
 {
@@ -12,6 +13,8 @@ private:
 	mjt::VertexArrayObject* vao;
 	mjt::VertexBufferObject* vbo;
 	mjt::VertexBufferObject* vbocolors;
+	mjt::IndicesBufferObject* indices;
+
 	mjt::ShaderProgram* shader;
 	mjt::PerspectiveCamera* camera;
 

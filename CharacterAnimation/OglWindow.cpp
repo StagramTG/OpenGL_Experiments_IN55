@@ -9,6 +9,7 @@ OglWindow::~OglWindow()
 {
 	delete vbo;
 	delete vbocolors;
+	delete indices;
 	delete vao;
 
 	delete camera;
@@ -28,8 +29,13 @@ void OglWindow::init()
 		0.f, 0.f, 1.f,
 	};
 
+	GLuint index[] = {
+		0, 1, 2
+	};
+
 	std::vector<GLfloat> data(vertices, vertices+9);
 	std::vector<GLfloat> col(colors, colors+9);
+	std::vector<GLuint> ind(index, index+9);
 
 	vao = new mjt::VertexArrayObject();
 	vao->bind();
@@ -50,6 +56,10 @@ void OglWindow::init()
 
 	vao->attribPointer(1, 3, GL_FLOAT, GL_FALSE, 0);
 	vbo->unbind();
+
+	indices = new mjt::IndicesBufferObject();
+	indices->bind();
+	indices->setData(ind);
 
 	vao->unbind();
 
@@ -78,7 +88,7 @@ void OglWindow::render()
 	shader->setUniformMat4(loc, camera->getViewOf(model));
 
 	vao->bind();
-	glDrawArrays(GL_TRIANGLES, 0, 3);
+	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
 	vao->unbind();
 
 	shader->done();

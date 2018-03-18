@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 #include "BufferObject.h"
 
 namespace mjt
@@ -11,5 +12,7 @@ namespace mjt
 	public:
 		IndicesBufferObject();
 		~IndicesBufferObject();
+
+		void setData(std::vector<GLuint> data);
 	};
 }
