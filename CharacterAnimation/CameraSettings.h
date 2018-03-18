@@ -16,11 +16,13 @@ namespace mjt
 		glm::vec3 target;
 
 		/*Constructor to init default values*/
-		CameraSettings() :
+		CameraSettings():
 			fov(45.f),
-			aspect(16.f/9.f),
+			aspect(16.f / 9.f),
 			znear(0.1f),
-			zfar(100.f)
+			zfar(100.f),
+			position(0.f, 0.f, 0.f),
+			target(0.f,0.f,0.f)
 		{}
 	};
 }
