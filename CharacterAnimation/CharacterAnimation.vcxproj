@@ -138,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="BufferObject.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraSettings.h" />
     <ClInclude Include="OglWindow.h" />
     <ClInclude Include="OglWindowAbs.h" />
     <ClInclude Include="ShaderProgram.h" />

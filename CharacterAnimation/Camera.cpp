@@ -2,8 +2,20 @@
 
 namespace mjt
 {
+	void Camera::init(glm::vec3 position, glm::vec3 target)
+	{
+		m_position = position;
+		m_target = target;
+	}
+
 	Camera::Camera()
 	{
+		init(glm::vec3(), glm::vec3());
+	}
+
+	Camera::Camera(glm::vec3 position, glm::vec3 target)
+	{
+		init(position, target);
 	}
 
 	Camera::~Camera()
@@ -33,5 +45,10 @@ namespace mjt
 	void Camera::move(glm::vec3 move)
 	{
 		m_position += move;
+	}
+
+	glm::mat4 Camera::getViewOf(glm::mat4 modelMat)
+	{
+		return m_projection * m_view * modelMat;
 	}
 }
