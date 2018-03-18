@@ -2,20 +2,13 @@
 
 namespace mjt
 {
-	void Camera::init(glm::vec3 position, glm::vec3 target)
+	Camera::Camera(): m_settings()
 	{
-		m_settings.position = position;
-		m_settings.target = target;
 	}
 
-	Camera::Camera()
+	Camera::Camera(CameraSettings settings)
 	{
-		init(glm::vec3(), glm::vec3());
-	}
-
-	Camera::Camera(glm::vec3 position, glm::vec3 target)
-	{
-		init(position, target);
+		m_settings = settings;
 	}
 
 	Camera::~Camera()

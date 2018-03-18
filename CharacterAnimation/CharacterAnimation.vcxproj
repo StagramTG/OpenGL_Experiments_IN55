@@ -131,6 +131,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OglWindow.cpp" />
     <ClCompile Include="OglWindowAbs.cpp" />
+    <ClCompile Include="PerspectiveCamera.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
     <ClCompile Include="VertexArrayObject.cpp" />
     <ClCompile Include="VertexBufferObject.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="CameraSettings.h" />
     <ClInclude Include="OglWindow.h" />
     <ClInclude Include="OglWindowAbs.h" />
+    <ClInclude Include="PerspectiveCamera.h" />
     <ClInclude Include="ShaderProgram.h" />
     <ClInclude Include="VertexArrayObject.h" />
     <ClInclude Include="VertexBufferObject.h" />

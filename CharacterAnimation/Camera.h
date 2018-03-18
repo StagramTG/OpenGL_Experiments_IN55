@@ -13,12 +13,9 @@ namespace mjt
 		glm::mat4 m_view;
 		glm::mat4 m_projection;
 
-		/*Methods*/
-		void init(glm::vec3 position, glm::vec3 target);
-
 	public:
 		Camera();
-		Camera(glm::vec3 position, glm::vec3 target);
+		Camera(CameraSettings settings);
 		~Camera();
 
 		void setPosition(glm::vec3 position);
