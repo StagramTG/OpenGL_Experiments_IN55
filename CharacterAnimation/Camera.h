@@ -8,8 +8,7 @@ namespace mjt
 	class Camera
 	{
 	protected:
-		glm::vec3 m_position;
-		glm::vec3 m_target;
+		CameraSettings m_settings;
 
 		glm::mat4 m_view;
 		glm::mat4 m_projection;
@@ -30,6 +29,7 @@ namespace mjt
 
 		void move(glm::vec3 move);
 
+		/*Method to implement to calculate view and projections matrices*/
 		virtual void update() = 0;
 		glm::mat4 getViewOf(glm::mat4 modelMat);
 	};

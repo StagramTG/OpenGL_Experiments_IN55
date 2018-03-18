@@ -4,8 +4,8 @@ namespace mjt
 {
 	void Camera::init(glm::vec3 position, glm::vec3 target)
 	{
-		m_position = position;
-		m_target = target;
+		m_settings.position = position;
+		m_settings.target = target;
 	}
 
 	Camera::Camera()
@@ -24,27 +24,27 @@ namespace mjt
 
 	void Camera::setPosition(glm::vec3 position)
 	{
-		m_position = position;
+		m_settings.position = position;
 	}
 
 	glm::vec3 Camera::getPosition()
 	{
-		return m_position;
+		return m_settings.position;
 	}
 
 	void Camera::setTarget(glm::vec3 target)
 	{
-		m_target = target;
+		m_settings.target = target;
 	}
 
 	glm::vec3 Camera::getTarget()
 	{
-		return m_target;
+		return m_settings.target;
 	}
 
 	void Camera::move(glm::vec3 move)
 	{
-		m_position += move;
+		m_settings.position += move;
 	}
 
 	glm::mat4 Camera::getViewOf(glm::mat4 modelMat)
