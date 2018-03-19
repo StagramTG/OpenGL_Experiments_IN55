@@ -20,6 +20,8 @@ private:
 
 	glm::mat4 model;
 
+	sf::Texture* texture;
+
 public:
 	OglWindow(int width, int height, const char* title);
 	~OglWindow();

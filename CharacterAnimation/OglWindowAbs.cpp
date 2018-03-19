@@ -19,6 +19,9 @@ namespace mjt
 		{
 			std::cerr << "Glew initialization failed..." << std::endl;
 		}
+
+		/*Enable OpenGL things*/
+		glEnable(GL_TEXTURE_2D);
 	}
 
 	OglWindowAbs::OglWindowAbs()

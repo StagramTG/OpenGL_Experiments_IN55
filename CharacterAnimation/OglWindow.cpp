@@ -13,6 +13,7 @@ OglWindow::~OglWindow()
 	delete vao;
 
 	delete camera;
+	delete texture;
 }
 
 void OglWindow::init()
@@ -24,9 +25,9 @@ void OglWindow::init()
 	};
 
 	GLfloat colors[] = {
-		0.f, 1.f, 0.f,
-		1.f, 0.f, 0.f,
-		0.f, 0.f, 1.f,
+		0.5f, 0.f,
+		1.f, -1.f,
+		1.f, -1.f
 	};
 
 	GLuint index[] = {
@@ -54,7 +55,7 @@ void OglWindow::init()
 	vbocolors->bind();
 	vbocolors->setData(col);
 
-	vao->attribPointer(1, 3, GL_FLOAT, GL_FALSE, 0);
+	vao->attribPointer(1, 2, GL_FLOAT, GL_FALSE, 0);
 	vbo->unbind();
 
 	indices = new mjt::IndicesBufferObject();
@@ -72,6 +73,9 @@ void OglWindow::init()
 
 	model = glm::mat4(1.0f);
 	model = glm::translate(model, glm::vec3(-2.f, 0, 0));
+
+	texture = new sf::Texture();
+	texture->loadFromFile("images/tile.jpg");
 }
 
 void OglWindow::update()
@@ -87,9 +91,11 @@ void OglWindow::render()
 	GLuint loc = shader->getUniformLocation("mvp");
 	shader->setUniformMat4(loc, camera->getMatrix() * model);
 
+	sf::Texture::bind(texture);
 	vao->bind();
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
 	vao->unbind();
+	sf::Texture::bind(NULL);
 
 	shader->done();
 }
