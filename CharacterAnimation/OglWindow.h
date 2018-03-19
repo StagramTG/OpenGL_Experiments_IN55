@@ -1,20 +1,16 @@
 #pragma once
 
 #include "OglWindowAbs.h"
-#include "VertexArrayObject.h"
-#include "VertexBufferObject.h"
 #include "ShaderProgram.h"
 #include "PerspectiveCamera.h"
-#include "IndicesBufferObject.h"
 #include "Texture.h"
+
+#include "ColoredModel.h"
 
 class OglWindow: public mjt::OglWindowAbs
 {
 private:
-	mjt::VertexArrayObject* vao;
-	mjt::VertexBufferObject* vbo;
-	mjt::VertexBufferObject* vbocolors;
-	mjt::IndicesBufferObject* indices;
+	mjt::ColoredModel* mod;
 
 	mjt::ShaderProgram* shader;
 	mjt::PerspectiveCamera* camera;

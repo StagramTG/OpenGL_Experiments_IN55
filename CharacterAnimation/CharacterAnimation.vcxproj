@@ -128,6 +128,7 @@
   <ItemGroup>
     <ClCompile Include="BufferObject.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ColoredModel.cpp" />
     <ClCompile Include="IndicesBufferObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OglWindow.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="BufferObject.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraSettings.h" />
+    <ClInclude Include="ColoredModel.h" />
     <ClInclude Include="IndicesBufferObject.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="OglWindow.h" />

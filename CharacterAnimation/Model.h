@@ -1,14 +1,17 @@
 #pragma once
 
+#include <GL\glew.h>
+
 namespace mjt
 {
 	class Model
 	{
-	private:
+	protected:
 		int m_verticesCount;
+		GLenum m_drawMode;
 
 	public:
-		Model() {}
+		Model(GLenum drawMode) { m_drawMode = drawMode; }
 		~Model() {}
 
 		virtual void render() = 0;

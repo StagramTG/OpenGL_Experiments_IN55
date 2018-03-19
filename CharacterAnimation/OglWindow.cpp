@@ -7,10 +7,7 @@ OglWindow::OglWindow(int width, int height, const char* title):
 
 OglWindow::~OglWindow()
 {
-	delete vbo;
-	delete vbocolors;
-	delete indices;
-	delete vao;
+	delete mod;
 
 	delete camera;
 	delete texture;
@@ -25,9 +22,9 @@ void OglWindow::init()
 	};
 
 	GLfloat colors[] = {
-		0.5f, 0.f,
-		0.f, 1.f,
-		1.f, 1.f
+		1.f, 0.f, 0.f,
+		0.f, 1.f, 0.f,
+		0.f, 0.f, 1.f
 	};
 
 	GLuint index[] = {
@@ -38,31 +35,7 @@ void OglWindow::init()
 	std::vector<GLfloat> col(colors, colors+9);
 	std::vector<GLuint> ind(index, index+3);
 
-	vao = new mjt::VertexArrayObject();
-	vao->bind();
-	vao->enableAttribArray(0);
-
-	vbo = new mjt::VertexBufferObject();
-	vbo->bind();
-	vbo->setData(data);
-	
-	vao->attribPointer(0, 3, GL_FLOAT, GL_FALSE, 0);
-	vbo->unbind();
-
-	vao->enableAttribArray(1);
-
-	vbocolors = new mjt::VertexBufferObject();
-	vbocolors->bind();
-	vbocolors->setData(col);
-
-	vao->attribPointer(1, 2, GL_FLOAT, GL_FALSE, 0);
-	vbo->unbind();
-
-	indices = new mjt::IndicesBufferObject();
-	indices->bind();
-	indices->setData(ind);
-
-	vao->unbind();
+	mod = new mjt::ColoredModel(GL_TRIANGLES, data, col, ind);
 
 	shader = new mjt::ShaderProgram();
 	shader->init("shaders/vertex.glsl", "shaders/fragment.glsl");
@@ -90,11 +63,7 @@ void OglWindow::render()
 	GLuint loc = shader->getUniformLocation("mvp");
 	shader->setUniformMat4(loc, camera->getMatrix() * model);
 
-	texture->bind();
-	vao->bind();
-	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
-	vao->unbind();
-	texture->unbind();
+	mod->render();
 
 	shader->done();
 }
