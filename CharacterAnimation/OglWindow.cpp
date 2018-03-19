@@ -85,7 +85,7 @@ void OglWindow::render()
 
 	shader->use();
 	GLuint loc = shader->getUniformLocation("mvp");
-	shader->setUniformMat4(loc, camera->getViewOf(model));
+	shader->setUniformMat4(loc, camera->getMatrix() * model);
 
 	vao->bind();
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);

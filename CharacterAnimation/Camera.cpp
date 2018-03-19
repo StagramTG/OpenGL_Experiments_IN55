@@ -40,8 +40,8 @@ namespace mjt
 		m_settings.position += move;
 	}
 
-	glm::mat4 Camera::getViewOf(glm::mat4 modelMat)
+	glm::mat4 Camera::getMatrix()
 	{
-		return m_projection * m_view * modelMat;
+		return m_projection * m_view;
 	}
 }

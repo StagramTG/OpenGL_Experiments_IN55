@@ -28,6 +28,6 @@ namespace mjt
 
 		/*Method to implement to calculate view and projections matrices*/
 		virtual void update() = 0;
-		glm::mat4 getViewOf(glm::mat4 modelMat);
+		glm::mat4 getMatrix();
 	};
 }
