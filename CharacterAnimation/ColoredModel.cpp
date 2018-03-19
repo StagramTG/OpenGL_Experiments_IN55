@@ -52,5 +52,6 @@ namespace mjt
 	{
 		m_vao->bind();
 		glDrawElements(m_drawMode, m_verticesCount, GL_UNSIGNED_INT, 0);
+		m_vao->unbind();
 	}
 }

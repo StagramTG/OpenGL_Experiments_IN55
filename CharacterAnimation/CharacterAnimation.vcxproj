@@ -136,6 +136,7 @@
     <ClCompile Include="OglWindowAbs.cpp" />
     <ClCompile Include="PerspectiveCamera.cpp" />
     <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="TestEntity.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VertexArrayObject.cpp" />
     <ClCompile Include="VertexBufferObject.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="OglWindowAbs.h" />
     <ClInclude Include="PerspectiveCamera.h" />
     <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="TestEntity.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="VertexArrayObject.h" />
     <ClInclude Include="VertexBufferObject.h" />

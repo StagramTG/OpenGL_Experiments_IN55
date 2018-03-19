@@ -5,17 +5,15 @@
 #include "PerspectiveCamera.h"
 #include "Texture.h"
 
-#include "ColoredModel.h"
+#include "TestEntity.h"
 
 class OglWindow: public mjt::OglWindowAbs
 {
 private:
-	mjt::ColoredModel* mod;
+	TestEntity* entity;
 
 	mjt::ShaderProgram* shader;
 	mjt::PerspectiveCamera* camera;
-
-	glm::mat4 model;
 
 	mjt::Texture* texture;
 

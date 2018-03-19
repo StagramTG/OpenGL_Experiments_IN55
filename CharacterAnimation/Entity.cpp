@@ -4,6 +4,11 @@ namespace mjt
 {
 	Entity::Entity()
 	{
+		m_position = glm::vec3(0, 0, 0);
+		m_rotX = 0;
+		m_rotY = 0;
+		m_rotZ = 0;
+		m_scale = glm::vec3(1, 1, 1);
 	}
 
 	Entity::~Entity()
@@ -15,8 +20,8 @@ namespace mjt
 		glm::mat4 model = glm::mat4(1.f);
 		model = glm::translate(model, m_position) *
 			glm::rotate(model, m_rotX, glm::vec3(1, 0, 0)) *
-			glm::rotate(model, m_rotX, glm::vec3(0, 1, 0)) *
-			glm::rotate(model, m_rotX, glm::vec3(0, 0, 1)) *
+			glm::rotate(model, m_rotY, glm::vec3(0, 1, 0)) *
+			glm::rotate(model, m_rotZ, glm::vec3(0, 0, 1)) *
 			glm::scale(model, m_scale);
 
 		return model;
