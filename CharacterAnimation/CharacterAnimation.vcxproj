@@ -143,6 +143,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraSettings.h" />
     <ClInclude Include="IndicesBufferObject.h" />
+    <ClInclude Include="Model.h" />
     <ClInclude Include="OglWindow.h" />
     <ClInclude Include="OglWindowAbs.h" />
     <ClInclude Include="PerspectiveCamera.h" />

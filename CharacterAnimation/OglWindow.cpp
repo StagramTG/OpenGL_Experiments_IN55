@@ -26,8 +26,8 @@ void OglWindow::init()
 
 	GLfloat colors[] = {
 		0.5f, 0.f,
-		1.f, -1.f,
-		1.f, -1.f
+		0.f, 1.f,
+		1.f, 1.f
 	};
 
 	GLuint index[] = {
@@ -36,7 +36,7 @@ void OglWindow::init()
 
 	std::vector<GLfloat> data(vertices, vertices+9);
 	std::vector<GLfloat> col(colors, colors+9);
-	std::vector<GLuint> ind(index, index+9);
+	std::vector<GLuint> ind(index, index+3);
 
 	vao = new mjt::VertexArrayObject();
 	vao->bind();
@@ -74,8 +74,7 @@ void OglWindow::init()
 	model = glm::mat4(1.0f);
 	model = glm::translate(model, glm::vec3(-2.f, 0, 0));
 
-	texture = new sf::Texture();
-	texture->loadFromFile("images/tile.jpg");
+	texture = new mjt::Texture("images/tile.jpg");
 }
 
 void OglWindow::update()
@@ -91,11 +90,11 @@ void OglWindow::render()
 	GLuint loc = shader->getUniformLocation("mvp");
 	shader->setUniformMat4(loc, camera->getMatrix() * model);
 
-	sf::Texture::bind(texture);
+	texture->bind();
 	vao->bind();
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
 	vao->unbind();
-	sf::Texture::bind(NULL);
+	texture->unbind();
 
 	shader->done();
 }

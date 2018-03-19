@@ -6,6 +6,7 @@
 #include "ShaderProgram.h"
 #include "PerspectiveCamera.h"
 #include "IndicesBufferObject.h"
+#include "Texture.h"
 
 class OglWindow: public mjt::OglWindowAbs
 {
@@ -20,7 +21,7 @@ private:
 
 	glm::mat4 model;
 
-	sf::Texture* texture;
+	mjt::Texture* texture;
 
 public:
 	OglWindow(int width, int height, const char* title);
