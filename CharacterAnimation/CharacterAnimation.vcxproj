@@ -70,8 +70,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\Documents\DEV\VisualStudio2015\CharacterAnimation\vendors\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Documents\DEV\VisualStudio2015\CharacterAnimation\vendors\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)vendors\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)vendors\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>D:\Documents\DEV\VisualStudio2015\CharacterAnimation\vendors\include;$(IncludePath)</IncludePath>
