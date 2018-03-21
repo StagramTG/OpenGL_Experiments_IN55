@@ -132,6 +132,7 @@
     <ClCompile Include="MJT\Entity.cpp" />
     <ClCompile Include="MJT\IndicesBufferObject.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MJT\Transform.cpp" />
     <ClCompile Include="OglWindow.cpp" />
     <ClCompile Include="MJT\OglWindowAbs.cpp" />
     <ClCompile Include="MJT\PerspectiveCamera.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="MJT\Entity.h" />
     <ClInclude Include="MJT\IndicesBufferObject.h" />
     <ClInclude Include="MJT\Model.h" />
+    <ClInclude Include="MJT\Transform.h" />
     <ClInclude Include="OglWindow.h" />
     <ClInclude Include="MJT\OglWindowAbs.h" />
     <ClInclude Include="MJT\PerspectiveCamera.h" />
