@@ -18,13 +18,13 @@ void OglWindow::init()
 	entity = new TestEntity();
 
 	shader = new mjt::ShaderProgram();
-	shader->init("shaders/vertex.glsl", "shaders/fragment.glsl");
+	shader->init("Assets/Shaders/vertex.glsl", "Assets/Shaders/fragment.glsl");
 
 	camera = new mjt::PerspectiveCamera(mjt::CameraSettings());
 	camera->setPosition(glm::vec3(3.f, 3.f, 4.f));
 	camera->update();
 
-	texture = new mjt::Texture("images/tile.jpg");
+	texture = new mjt::Texture("Assets/Images/tile.jpg");
 }
 
 void OglWindow::update()
