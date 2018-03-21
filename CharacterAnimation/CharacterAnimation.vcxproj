@@ -126,37 +126,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BufferObject.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="ColoredModel.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="IndicesBufferObject.cpp" />
+    <ClCompile Include="MJT\BufferObject.cpp" />
+    <ClCompile Include="MJT\Camera.cpp" />
+    <ClCompile Include="MJT\ColoredModel.cpp" />
+    <ClCompile Include="MJT\Entity.cpp" />
+    <ClCompile Include="MJT\IndicesBufferObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OglWindow.cpp" />
-    <ClCompile Include="OglWindowAbs.cpp" />
-    <ClCompile Include="PerspectiveCamera.cpp" />
-    <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="MJT\OglWindowAbs.cpp" />
+    <ClCompile Include="MJT\PerspectiveCamera.cpp" />
+    <ClCompile Include="MJT\ShaderProgram.cpp" />
     <ClCompile Include="TestEntity.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="VertexArrayObject.cpp" />
-    <ClCompile Include="VertexBufferObject.cpp" />
+    <ClCompile Include="MJT\Texture.cpp" />
+    <ClCompile Include="MJT\VertexArrayObject.cpp" />
+    <ClCompile Include="MJT\VertexBufferObject.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BufferObject.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="CameraSettings.h" />
-    <ClInclude Include="ColoredModel.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="IndicesBufferObject.h" />
-    <ClInclude Include="Model.h" />
+    <ClInclude Include="MJT\BufferObject.h" />
+    <ClInclude Include="MJT\Camera.h" />
+    <ClInclude Include="MJT\CameraSettings.h" />
+    <ClInclude Include="MJT\ColoredModel.h" />
+    <ClInclude Include="MJT\Entity.h" />
+    <ClInclude Include="MJT\IndicesBufferObject.h" />
+    <ClInclude Include="MJT\Model.h" />
     <ClInclude Include="OglWindow.h" />
-    <ClInclude Include="OglWindowAbs.h" />
-    <ClInclude Include="PerspectiveCamera.h" />
-    <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="MJT\OglWindowAbs.h" />
+    <ClInclude Include="MJT\PerspectiveCamera.h" />
+    <ClInclude Include="MJT\ShaderProgram.h" />
     <ClInclude Include="TestEntity.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="VertexArrayObject.h" />
-    <ClInclude Include="VertexBufferObject.h" />
+    <ClInclude Include="MJT\Texture.h" />
+    <ClInclude Include="MJT\VertexArrayObject.h" />
+    <ClInclude Include="MJT\VertexBufferObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

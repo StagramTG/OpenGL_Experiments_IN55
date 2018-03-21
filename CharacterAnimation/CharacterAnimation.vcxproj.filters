@@ -18,40 +18,40 @@
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="OglWindowAbs.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="OglWindow.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="VertexArrayObject.cpp">
+    <ClCompile Include="MJT\BufferObject.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="BufferObject.cpp">
+    <ClCompile Include="MJT\Camera.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="VertexBufferObject.cpp">
+    <ClCompile Include="MJT\ColoredModel.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderProgram.cpp">
+    <ClCompile Include="MJT\Entity.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
+    <ClCompile Include="MJT\IndicesBufferObject.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="PerspectiveCamera.cpp">
+    <ClCompile Include="MJT\OglWindowAbs.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="IndicesBufferObject.cpp">
+    <ClCompile Include="MJT\PerspectiveCamera.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
+    <ClCompile Include="MJT\ShaderProgram.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="ColoredModel.cpp">
+    <ClCompile Include="MJT\Texture.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
+    <ClCompile Include="MJT\VertexArrayObject.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MJT\VertexBufferObject.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="TestEntity.cpp">
@@ -59,46 +59,46 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="OglWindowAbs.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="OglWindow.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="VertexArrayObject.h">
+    <ClInclude Include="MJT\BufferObject.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="BufferObject.h">
+    <ClInclude Include="MJT\Camera.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="VertexBufferObject.h">
+    <ClInclude Include="MJT\CameraSettings.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderProgram.h">
+    <ClInclude Include="MJT\ColoredModel.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
+    <ClInclude Include="MJT\Entity.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="CameraSettings.h">
+    <ClInclude Include="MJT\IndicesBufferObject.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="PerspectiveCamera.h">
+    <ClInclude Include="MJT\Model.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="IndicesBufferObject.h">
+    <ClInclude Include="MJT\OglWindowAbs.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
+    <ClInclude Include="MJT\PerspectiveCamera.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Model.h">
+    <ClInclude Include="MJT\ShaderProgram.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="ColoredModel.h">
+    <ClInclude Include="MJT\Texture.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
+    <ClInclude Include="MJT\VertexArrayObject.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MJT\VertexBufferObject.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="TestEntity.h">

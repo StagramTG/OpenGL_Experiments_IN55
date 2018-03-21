@@ -1,9 +1,9 @@
 #pragma once
 
-#include "OglWindowAbs.h"
-#include "ShaderProgram.h"
-#include "PerspectiveCamera.h"
-#include "Texture.h"
+#include "MJT/OglWindowAbs.h"
+#include "MJT/ShaderProgram.h"
+#include "MJT/PerspectiveCamera.h"
+#include "MJT/Texture.h"
 
 #include "TestEntity.h"
 
