@@ -53,4 +53,9 @@ namespace mjt
 			}
 		}
 	}
+
+	Transform * SceneNode::getTransform()
+	{
+		return m_transform;
+	}
 }

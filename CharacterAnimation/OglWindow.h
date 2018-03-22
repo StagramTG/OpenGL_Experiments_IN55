@@ -5,20 +5,15 @@
 #include "MJT/PerspectiveCamera.h"
 #include "MJT/Texture.h"
 
-#include "TestEntity.h"
-
-#include "MJT\SceneNode.h"
+#include "TestSceneNode.h"
 
 class OglWindow: public mjt::OglWindowAbs
 {
 private:
-	TestEntity* entity;
-	mjt::SceneNode* root;
+	TestSceneNode * testNode;
 
 	mjt::ShaderProgram* shader;
 	mjt::PerspectiveCamera* camera;
-
-	mjt::Texture* texture;
 
 public:
 	OglWindow(int width, int height, const char* title);

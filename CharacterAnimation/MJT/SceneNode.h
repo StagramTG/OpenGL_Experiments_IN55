@@ -21,5 +21,7 @@ namespace mjt
 
 		void addChild(SceneNode* child);
 		void removeChild(SceneNode* child);
+
+		Transform* getTransform();
 	};
 }

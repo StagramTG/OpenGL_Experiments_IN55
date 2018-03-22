@@ -7,18 +7,9 @@ namespace mjt
 	class Transform
 	{
 	private:
-		friend class SceneNode;
-
 		glm::mat4 m_toWorld, m_fromWorld;
 		glm::vec3 m_position, m_scale;
 		float m_rotationX, m_rotationY, m_rotationZ;
-
-		void setPosition(glm::vec3 position);
-		void move(glm::vec3 movement);
-		void setScale(glm::vec3 scale);
-		void setRotationX(float rotationX);
-		void setRotationY(float rotationY);
-		void setRotationZ(float rotationZ);
 
 		void calculateMatrix();
 
@@ -33,5 +24,12 @@ namespace mjt
 		float getRotationX();
 		float getRotationY();
 		float getRotationZ();
+
+		void setPosition(glm::vec3 position);
+		void move(glm::vec3 movement);
+		void setScale(glm::vec3 scale);
+		void setRotationX(float rotationX);
+		void setRotationY(float rotationY);
+		void setRotationZ(float rotationZ);
 	};
 }

@@ -163,6 +163,8 @@
     <ClInclude Include="MJT\Texture.h" />
     <ClInclude Include="MJT\VertexArrayObject.h" />
     <ClInclude Include="MJT\VertexBufferObject.h" />
+    <ClInclude Include="TestScene.h" />
+    <ClInclude Include="TestSceneNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

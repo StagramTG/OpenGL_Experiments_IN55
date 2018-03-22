@@ -4,12 +4,14 @@ namespace mjt
 {
 	Transform::Transform()
 	{
-		m_position = glm::vec3(0, 0, 0);
-		m_scale = glm::vec3(0, 0, 0);
+		m_position = glm::vec3(0.f, 0.f, 0.f);
+		m_scale = glm::vec3(1.f, 1.f, 1.f);
 
 		m_rotationX = 0.f;
 		m_rotationY = 0.f;
 		m_rotationZ = 0.f;
+
+		m_fromWorld = glm::mat4(1.0f);
 
 		calculateMatrix();
 	}
@@ -86,6 +88,7 @@ namespace mjt
 
 	void Transform::calculateMatrix()
 	{
+		m_toWorld = glm::mat4(1.0f);
 		m_toWorld = glm::translate(m_toWorld, m_position) *
 			glm::rotate(m_toWorld, m_rotationX, glm::vec3(1, 0, 0)) *
 			glm::rotate(m_toWorld, m_rotationY, glm::vec3(0, 1, 0)) *
