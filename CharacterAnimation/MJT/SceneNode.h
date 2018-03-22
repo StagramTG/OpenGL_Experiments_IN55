@@ -1,6 +1,9 @@
 #pragma once
 
+#include <iostream>
 #include <vector>
+#include <algorithm>
+#include <iterator>
 #include "Transform.h"
 
 namespace mjt
@@ -15,5 +18,11 @@ namespace mjt
 	public:
 		SceneNode();
 		~SceneNode();
+
+		virtual void update();
+		virtual void render();
+
+		void addChild(SceneNode* child);
+		void removeChild(SceneNode* child);
 	};
 }

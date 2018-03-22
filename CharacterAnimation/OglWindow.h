@@ -7,10 +7,13 @@
 
 #include "TestEntity.h"
 
+#include "MJT\SceneNode.h"
+
 class OglWindow: public mjt::OglWindowAbs
 {
 private:
 	TestEntity* entity;
+	mjt::SceneNode* root;
 
 	mjt::ShaderProgram* shader;
 	mjt::PerspectiveCamera* camera;

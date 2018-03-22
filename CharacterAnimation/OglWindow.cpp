@@ -8,6 +8,7 @@ OglWindow::OglWindow(int width, int height, const char* title):
 OglWindow::~OglWindow()
 {
 	delete entity;
+	delete root;
 
 	delete camera;
 	delete texture;
@@ -25,12 +26,23 @@ void OglWindow::init()
 	camera->update();
 
 	texture = new mjt::Texture("Assets/Images/tile.jpg");
+
+	root = new mjt::SceneNode();
+	mjt::SceneNode* child1 = new mjt::SceneNode();
+	mjt::SceneNode* child2 = new mjt::SceneNode();
+
+	root->addChild(child1);
+	root->addChild(child2);
+
+	root->removeChild(child2);
 }
 
 void OglWindow::update()
 {
 	camera->update();
 	entity->update();
+
+	root->update();
 }
 
 void OglWindow::render()

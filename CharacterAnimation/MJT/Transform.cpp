@@ -4,6 +4,14 @@ namespace mjt
 {
 	Transform::Transform()
 	{
+		m_position = glm::vec3(0, 0, 0);
+		m_scale = glm::vec3(0, 0, 0);
+
+		m_rotationX = 0.f;
+		m_rotationY = 0.f;
+		m_rotationZ = 0.f;
+
+		calculateMatrix();
 	}
 
 	Transform::~Transform()
