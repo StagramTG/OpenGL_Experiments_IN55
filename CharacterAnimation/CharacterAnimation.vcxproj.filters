@@ -57,10 +57,10 @@
     <ClCompile Include="TestEntity.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="SceneNode.cpp">
+    <ClCompile Include="MJT\Transform.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="MJT\Transform.cpp">
+    <ClCompile Include="MJT\SceneNode.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -110,10 +110,10 @@
     <ClInclude Include="TestEntity.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="SceneNode.h">
+    <ClInclude Include="MJT\Transform.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="MJT\Transform.h">
+    <ClInclude Include="MJT\SceneNode.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,8 +1,7 @@
 #pragma once
 
-/*Shared_ptr*/
-#include <memory>
 #include <vector>
+#include "Transform.h"
 
 namespace mjt
 {
@@ -11,6 +10,7 @@ namespace mjt
 	protected:
 		SceneNode* m_parent;
 		std::vector<SceneNode*> m_children;
+		Transform* m_transform;
 
 	public:
 		SceneNode();
