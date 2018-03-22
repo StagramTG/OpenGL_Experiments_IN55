@@ -138,6 +138,7 @@
     <ClCompile Include="MJT\PerspectiveCamera.cpp" />
     <ClCompile Include="MJT\ShaderProgram.cpp" />
     <ClCompile Include="MJT\SceneNode.cpp" />
+    <ClCompile Include="MJT\Scene.cpp" />
     <ClCompile Include="TestEntity.cpp" />
     <ClCompile Include="MJT\Texture.cpp" />
     <ClCompile Include="MJT\VertexArrayObject.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="MJT\PerspectiveCamera.h" />
     <ClInclude Include="MJT\ShaderProgram.h" />
     <ClInclude Include="MJT\SceneNode.h" />
+    <ClInclude Include="MJT\Scene.h" />
     <ClInclude Include="TestEntity.h" />
     <ClInclude Include="MJT\Texture.h" />
     <ClInclude Include="MJT\VertexArrayObject.h" />

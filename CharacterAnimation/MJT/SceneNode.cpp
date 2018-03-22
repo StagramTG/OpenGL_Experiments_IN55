@@ -49,9 +49,6 @@ namespace mjt
 			if (m_children[i] == child)
 			{
 				m_children.erase(m_children.begin() + i);
-
-				std::cout << "delete : " << child << std::endl;
-
 				break;
 			}
 		}
