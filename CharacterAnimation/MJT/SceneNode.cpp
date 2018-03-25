@@ -30,7 +30,7 @@ namespace mjt
 	{
 		for (SceneNode* child : m_children)
 		{
-			child->update();
+			child->render();
 		}
 	}
 
@@ -54,7 +54,7 @@ namespace mjt
 		}
 	}
 
-	Transform * SceneNode::getTransform()
+	Transform* SceneNode::getTransform()
 	{
 		return m_transform;
 	}

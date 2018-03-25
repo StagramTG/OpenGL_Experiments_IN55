@@ -8,13 +8,19 @@ namespace mjt
 	{
 	protected:
 		SceneNode * m_rootNode;
+		const char* m_name;
 
 	public:
-		Scene();
+		Scene(const char* name);
 		~Scene();
 
 		virtual void init() = 0;
 		virtual void update();
 		virtual void render();
+
+		const char* getName();
+
+		/*Node managment methods*/
+		void addNode(SceneNode* node);
 	};
 }

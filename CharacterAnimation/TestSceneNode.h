@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 #include "MJT/SceneNode.h"
 #include "MJT/ColoredModel.h"
 
@@ -9,7 +11,7 @@ private:
 	mjt::ColoredModel* model;
 
 public:
-	TestSceneNode() : mjt::SceneNode()
+	TestSceneNode()
 	{
 		GLfloat vertices[] = {
 			0.f, 1.f, 0.f,
@@ -32,6 +34,7 @@ public:
 		std::vector<GLuint> ind(index, index + 3);
 
 		model = new mjt::ColoredModel(GL_TRIANGLES, data, col, ind);
+		m_transform->move(glm::vec3(1.0f));
 	}
 
 	~TestSceneNode() 
@@ -41,8 +44,6 @@ public:
 
 	virtual void update()
 	{
-		m_transform->setRotationY(m_transform->getRotationY() + 0.01f);
-
 		mjt::SceneNode::update();
 	}
 

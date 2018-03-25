@@ -51,11 +51,63 @@ namespace mjt
 					m_window.close();
 			}
 
-			update();
+			if (m_activeScene != nullptr)
+				m_activeScene->update();
 
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			render();
+			
+			if (m_activeScene != nullptr)
+				m_activeScene->render();
+
 			m_window.display();
 		}
+	}
+
+	bool OglWindowAbs::addScene(Scene * scene)
+	{
+		for (size_t i = 0; i < m_scenes.size(); ++i)
+		{
+			if (m_scenes[i]->getName() == scene->getName())
+			{
+				return false;
+			}
+		}
+
+		m_scenes.push_back(scene);
+		return true;
+	}
+
+	bool OglWindowAbs::setActiveScene(const char * name)
+	{
+		for (size_t i = 0; i < m_scenes.size(); ++i)
+		{
+			if (m_scenes[i]->getName() == name)
+			{
+				m_activeScene = m_scenes[i];
+				m_activeScene->init();
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	bool OglWindowAbs::deleteScene(const char * name)
+	{
+		if (m_activeScene->getName() == name)
+		{
+			return false;
+		}
+
+		for (size_t i = 0; i < m_scenes.size(); ++i)
+		{
+			if (m_scenes[i]->getName() == name)
+			{
+				m_scenes.erase(m_scenes.begin() + i);
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

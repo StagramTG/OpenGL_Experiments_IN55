@@ -2,7 +2,7 @@
 
 namespace mjt
 {
-	Scene::Scene()
+	Scene::Scene(const char* name): m_name(name)
 	{
 		m_rootNode = new SceneNode();
 	}
@@ -20,5 +20,15 @@ namespace mjt
 	void Scene::render()
 	{
 		m_rootNode->render();
+	}
+
+	const char * Scene::getName()
+	{
+		return m_name;
+	}
+
+	void Scene::addNode(SceneNode* node)
+	{
+		m_rootNode->addChild(node);
 	}
 }
