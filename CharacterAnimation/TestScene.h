@@ -14,8 +14,8 @@ class TestScene : public mjt::Scene
 private:
 	TestSceneNode * testNode;
 
-	mjt::ShaderProgram* shader;
-	mjt::PerspectiveCamera* camera;
+	mjt::ShaderProgram* m_shader;
+	mjt::PerspectiveCamera* m_camera;
 
 public:
 	TestScene() : mjt::Scene("Main")
@@ -25,8 +25,8 @@ public:
 
 	~TestScene()
 	{
-		delete shader;
-		delete camera;
+		delete m_shader;
+		delete m_camera;
 	}
 
 	void init()
@@ -34,28 +34,26 @@ public:
 		TestSceneNode* node = new TestSceneNode();
 		addNode(node);
 
-		shader = new mjt::ShaderProgram();
-		shader->init("Assets/Shaders/vertex.glsl", "Assets/Shaders/fragment.glsl");
+		m_shader = new mjt::ShaderProgram();
+		m_shader->init("Assets/Shaders/vertex.glsl", "Assets/Shaders/fragment.glsl");
 
-		camera = new mjt::PerspectiveCamera(mjt::CameraSettings());
-		camera->setPosition(glm::vec3(3.f, 3.f, 4.f));
+		m_camera = new mjt::PerspectiveCamera(mjt::CameraSettings());
+		m_camera->setPosition(glm::vec3(3.f, 3.f, 4.f));
 	}
 
 	virtual void update()
 	{
-		camera->update();
+		m_camera->update();
 
 		mjt::Scene::update();
 	}
 
-	virtual void render()
+	virtual void render(mjt::ShaderProgram* shader, mjt::Camera* camera)
 	{
-		shader->use();
-		GLuint loc = shader->getUniformLocation("mvp");
-		shader->setUniformMat4(loc, camera->getMatrix() * glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
+		m_shader->use();
 
-		mjt::Scene::render();
+		mjt::Scene::render(m_shader, m_camera);
 
-		shader->done();
+		m_shader->done();
 	}
 };

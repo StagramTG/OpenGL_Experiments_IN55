@@ -44,13 +44,18 @@ public:
 
 	virtual void update()
 	{
+		m_transform->setRotationY(m_transform->getRotationY() + 0.01f);
+
 		mjt::SceneNode::update();
 	}
 
-	virtual void render()
+	virtual void render(mjt::ShaderProgram* shader, mjt::Camera* camera)
 	{
+		GLuint loc = shader->getUniformLocation("mvp");
+		shader->setUniformMat4(loc, camera->getMatrix() * m_transform->getToWorld());
+
 		model->render();
 
-		mjt::SceneNode::render();
+		mjt::SceneNode::render(shader, camera);
 	}
 };

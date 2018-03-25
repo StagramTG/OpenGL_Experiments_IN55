@@ -16,7 +16,7 @@ namespace mjt
 
 		virtual void init() = 0;
 		virtual void update();
-		virtual void render();
+		virtual void render(ShaderProgram* shader, Camera* camera);
 
 		const char* getName();
 

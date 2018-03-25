@@ -17,9 +17,9 @@ namespace mjt
 		m_rootNode->update();
 	}
 
-	void Scene::render()
+	void Scene::render(ShaderProgram* shader, Camera* camera)
 	{
-		m_rootNode->render();
+		m_rootNode->render(shader, camera);
 	}
 
 	const char * Scene::getName()

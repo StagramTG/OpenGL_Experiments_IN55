@@ -26,11 +26,11 @@ namespace mjt
 		}
 	}
 
-	void SceneNode::render()
+	void SceneNode::render(ShaderProgram* shader, Camera* camera)
 	{
 		for (SceneNode* child : m_children)
 		{
-			child->render();
+			child->render(shader, camera);
 		}
 	}
 

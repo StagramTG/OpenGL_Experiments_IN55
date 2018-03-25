@@ -57,7 +57,7 @@ namespace mjt
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			
 			if (m_activeScene != nullptr)
-				m_activeScene->render();
+				m_activeScene->render(nullptr, nullptr);
 
 			m_window.display();
 		}
