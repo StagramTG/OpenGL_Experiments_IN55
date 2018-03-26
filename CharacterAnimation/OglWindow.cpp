@@ -8,6 +8,7 @@ OglWindow::OglWindow(int width, int height, const char* title):
 OglWindow::~OglWindow()
 {
 	delete testNode;
+	delete floorNode;
 
 	delete shader;
 	delete camera;
@@ -16,6 +17,7 @@ OglWindow::~OglWindow()
 void OglWindow::init()
 {
 	testNode = new TestSceneNode();
+	floorNode = new FloorSceneNode();
 
 	shader = new mjt::ShaderProgram();
 	shader->init("Assets/Shaders/vertex.glsl", "Assets/Shaders/fragment.glsl");
@@ -34,8 +36,11 @@ void OglWindow::render()
 {
 	shader->use();
 	GLuint loc = shader->getUniformLocation("mvp");
-	shader->setUniformMat4(loc, camera->getMatrix() * testNode->getTransform()->getToWorld());
 
+	shader->setUniformMat4(loc, camera->getMatrix() * floorNode->getTransform()->getToWorld());
+	floorNode->render();
+
+	shader->setUniformMat4(loc, camera->getMatrix() * testNode->getTransform()->getToWorld());
 	testNode->render();
 
 	shader->done();

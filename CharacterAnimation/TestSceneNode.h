@@ -2,11 +2,14 @@
 
 #include "MJT/SceneNode.h"
 #include "MJT/ColoredModel.h"
+#include "MJT/TexturedModel.h"
+#include "MJT/Texture.h"
 
 class TestSceneNode : public mjt::SceneNode
 {
 private:
-	mjt::ColoredModel* model;
+	mjt::TexturedModel* model;
+	mjt::Texture* texture;
 
 public:
 	TestSceneNode() : mjt::SceneNode()
@@ -23,15 +26,17 @@ public:
 			0.5f, -0.5f, -0.5f,
 		};
 
+
 		GLfloat colors[] = {
-			1.f, 0.f, 0.f,
-			0.f, 1.f, 0.f,
-			0.f, 0.f, 1.f,
-			1.f, 0.f, 0.f,
-			0.f, 1.f, 0.f,
-			0.f, 0.f, 1.f,
-			1.f, 1.f, 1.f,
-			1.f, 1.f, 1.f,
+			0.f, 0.f,
+			1.f, 0.f,
+			0.f, 1.f,
+			1.f, 1.f,
+
+			1.f, 1.f,
+			0.f, 1.f,
+			1.f, 0.f,
+			0.f, 0.f,
 		};
 
 		GLuint index[] = {
@@ -55,10 +60,10 @@ public:
 		};
 
 		std::vector<GLfloat> data(vertices, vertices + 24);
-		std::vector<GLfloat> col(colors, colors + 24);
+		std::vector<GLfloat> col(colors, colors + 16);
 		std::vector<GLuint> ind(index, index + 36);
 
-		model = new mjt::ColoredModel(GL_TRIANGLES, data, col, ind);
+		model = new mjt::TexturedModel(GL_TRIANGLES, data, col, ind, "Assets/Images/stone.png");
 	}
 
 	~TestSceneNode() 

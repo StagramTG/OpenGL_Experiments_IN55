@@ -143,8 +143,10 @@
     <ClCompile Include="MJT\Texture.cpp" />
     <ClCompile Include="MJT\VertexArrayObject.cpp" />
     <ClCompile Include="MJT\VertexBufferObject.cpp" />
+    <ClCompile Include="MJT\TexturedModel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FloorSceneNode.h" />
     <ClInclude Include="MJT\BufferObject.h" />
     <ClInclude Include="MJT\Camera.h" />
     <ClInclude Include="MJT\CameraSettings.h" />
@@ -165,6 +167,7 @@
     <ClInclude Include="MJT\VertexBufferObject.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="TestSceneNode.h" />
+    <ClInclude Include="MJT\TexturedModel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

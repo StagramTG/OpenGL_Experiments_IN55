@@ -6,11 +6,13 @@
 #include "MJT/Texture.h"
 
 #include "TestSceneNode.h"
+#include "FloorSceneNode.h"
 
 class OglWindow: public mjt::OglWindowAbs
 {
 private:
 	TestSceneNode * testNode;
+	FloorSceneNode* floorNode;
 
 	mjt::ShaderProgram* shader;
 	mjt::PerspectiveCamera* camera;

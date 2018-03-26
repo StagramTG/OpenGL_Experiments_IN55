@@ -6,6 +6,9 @@ namespace mjt
 	{
 		m_texture = new sf::Texture();
 		m_texture->loadFromFile(file);
+
+		m_texture->generateMipmap();
+		m_texture->setRepeated(true);
 	}
 
 	Texture::~Texture()
