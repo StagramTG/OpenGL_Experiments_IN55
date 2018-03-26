@@ -22,6 +22,9 @@ namespace mjt
 
 		/*Enable OpenGL things*/
 		glEnable(GL_TEXTURE_2D);
+		glEnable(GL_DEPTH_TEST);
+		glEnable(GL_CULL_FACE);
+		glCullFace(GL_BACK);
 	}
 
 	OglWindowAbs::OglWindowAbs()

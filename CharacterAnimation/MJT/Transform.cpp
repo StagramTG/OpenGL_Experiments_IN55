@@ -16,9 +16,7 @@ namespace mjt
 		calculateMatrix();
 	}
 
-	Transform::~Transform()
-	{
-	}
+	Transform::~Transform() = default;
 
 	glm::mat4 Transform::getToWorld()
 	{

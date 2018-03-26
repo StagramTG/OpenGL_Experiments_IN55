@@ -14,7 +14,7 @@ namespace mjt
 
 	public:
 		SceneNode();
-		~SceneNode();
+		virtual ~SceneNode();
 
 		virtual void update();
 		virtual void render();
