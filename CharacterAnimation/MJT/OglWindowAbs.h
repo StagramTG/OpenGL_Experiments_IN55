@@ -3,6 +3,9 @@
 #include <GL\glew.h>
 #include <SFML\Graphics.hpp>
 #include <iostream>
+#include <vector>
+
+#include "Scene.h"
 
 namespace mjt
 {
@@ -10,6 +13,8 @@ namespace mjt
 	{
 	protected:
 		sf::RenderWindow m_window;
+		std::vector<Scene*> m_scenes;
+		Scene* m_activeScene;
 
 		/*Methods*/
 		void initWindow(int width, int height, const char* title);
@@ -20,9 +25,12 @@ namespace mjt
 		~OglWindowAbs();
 
 		virtual void init() = 0;
-		virtual void update() = 0;
-		virtual void render() = 0;
 
 		void start();
+
+		/*Scene managment methods*/
+		bool addScene(Scene* scene);
+		bool setActiveScene(const char* name);
+		bool deleteScene(const char* name);
 	};
 }

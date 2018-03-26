@@ -1,69 +1,40 @@
 #pragma once
 
+#include <iostream>
+
 #include "MJT/SceneNode.h"
 #include "MJT/ColoredModel.h"
-#include "MJT/TexturedModel.h"
-#include "MJT/Texture.h"
 
 class TestSceneNode : public mjt::SceneNode
 {
 private:
-	mjt::TexturedModel* model;
-	mjt::Texture* texture;
+	mjt::ColoredModel* model;
 
 public:
-	TestSceneNode() : mjt::SceneNode()
+	TestSceneNode()
 	{
 		GLfloat vertices[] = {
-			-0.5f, 0.5f, 0.5f,
-			0.5f, 0.5f, 0.5f,
-			-0.5f, -0.5f, 0.5f,
-			0.5f, -0.5f, 0.5f,
-
-			-0.5f, 0.5f, -0.5f,
-			0.5f, 0.5f, -0.5f,
-			-0.5f, -0.5f, -0.5f,
-			0.5f, -0.5f, -0.5f,
+			0.f, 1.f, 0.f,
+			1.f, -1.f, 0.f,
+			-1.f, -1.f, 0.f,
 		};
 
-
 		GLfloat colors[] = {
-			0.f, 0.f,
-			1.f, 0.f,
-			0.f, 1.f,
-			1.f, 1.f,
-
-			1.f, 1.f,
-			0.f, 1.f,
-			1.f, 0.f,
-			0.f, 0.f,
+			1.f, 0.f, 0.f,
+			0.f, 1.f, 0.f,
+			0.f, 0.f, 1.f
 		};
 
 		GLuint index[] = {
-			0, 2, 1,
-			2, 3, 1,
-
-			4, 5, 7,
-			7, 6, 4,
-
-			4, 0, 5,
-			0, 1, 5,
-
-			1, 3, 5,
-			3, 7, 5,
-
-			4, 6, 2,
-			2, 0, 4,
-
-			3, 2, 6,
-			3, 6, 7
+			0, 1, 2
 		};
 
-		std::vector<GLfloat> data(vertices, vertices + 24);
-		std::vector<GLfloat> col(colors, colors + 16);
-		std::vector<GLuint> ind(index, index + 36);
+		std::vector<GLfloat> data(vertices, vertices + 9);
+		std::vector<GLfloat> col(colors, colors + 9);
+		std::vector<GLuint> ind(index, index + 3);
 
-		model = new mjt::TexturedModel(GL_TRIANGLES, data, col, ind, "Assets/Images/stone.png");
+		model = new mjt::ColoredModel(GL_TRIANGLES, data, col, ind);
+		m_transform->move(glm::vec3(1.0f));
 	}
 
 	~TestSceneNode() 
@@ -73,16 +44,18 @@ public:
 
 	virtual void update()
 	{
-		m_transform->setRotationZ(m_transform->getRotationZ() + 0.01f);
-		m_transform->setRotationX(m_transform->getRotationX() + 0.01f);
+		m_transform->setRotationY(m_transform->getRotationY() + 0.01f);
 
 		mjt::SceneNode::update();
 	}
 
-	virtual void render()
+	virtual void render(mjt::ShaderProgram* shader, mjt::Camera* camera)
 	{
+		GLuint loc = shader->getUniformLocation("mvp");
+		shader->setUniformMat4(loc, camera->getMatrix() * m_transform->getToWorld());
+
 		model->render();
 
-		mjt::SceneNode::render();
+		mjt::SceneNode::render(shader, camera);
 	}
 };

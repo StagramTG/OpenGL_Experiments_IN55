@@ -26,11 +26,11 @@ namespace mjt
 		}
 	}
 
-	void SceneNode::render()
+	void SceneNode::render(ShaderProgram* shader, Camera* camera)
 	{
 		for (SceneNode* child : m_children)
 		{
-			child->update();
+			child->render(shader, camera);
 		}
 	}
 
@@ -54,7 +54,7 @@ namespace mjt
 		}
 	}
 
-	Transform * SceneNode::getTransform()
+	Transform* SceneNode::getTransform()
 	{
 		return m_transform;
 	}

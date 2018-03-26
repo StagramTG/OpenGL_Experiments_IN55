@@ -125,6 +125,7 @@ namespace mjt
 		GLuint location = glGetUniformLocation(m_id, name);
 		return location;
 	}
+
 	void ShaderProgram::setUniformMat4(GLuint location, glm::mat4 mvp)
 	{
 		glUniformMatrix4fv(location, 1, GL_FALSE, &mvp[0][0]);
