@@ -5,10 +5,13 @@ namespace mjt
 	void OglWindowAbs::initWindow(int width, int height, const char * title)
 	{
 		sf::ContextSettings settings;
-		settings.majorVersion = 3;
-		settings.minorVersion = 3;
+		settings.majorVersion	   = 3;
+		settings.minorVersion	   = 3;
+		settings.depthBits         = 24;
+		settings.stencilBits       = 8;
+        settings.antialiasingLevel = 2;
 
-		m_window.create(sf::VideoMode(width, height), title);
+		m_window.create(sf::VideoMode(width, height), title, sf::Style::Default, settings);
 		m_window.setVerticalSyncEnabled(true);
 		m_window.setActive(true);
 
@@ -22,7 +25,10 @@ namespace mjt
 
 		/*Enable OpenGL things*/
 		glEnable(GL_TEXTURE_2D);
+
+		glDepthFunc(GL_LESS);
 		glEnable(GL_DEPTH_TEST);
+
 		glEnable(GL_CULL_FACE);
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

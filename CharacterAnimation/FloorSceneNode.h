@@ -42,7 +42,7 @@ public:
 			"Assets/Images/dirt.png"
 		);
 
-		m_transform->setPosition(glm::vec3(1.f, 0, 1.f));
+		m_transform->setPosition(glm::vec3(0, -0.5f, 0));
 		m_transform->setScale(glm::vec3(3, 3, 3));
 	}
 
@@ -53,10 +53,12 @@ public:
 		mjt::SceneNode::update();
 	}
 
-	void render() override
+	void render(mjt::ShaderProgram* shader, mjt::Camera* camera) override
 	{
+		GLuint mvp = shader->getUniformLocation("mvp");
+		shader->setUniformMat4(mvp, camera->getMatrix() * m_transform->getToWorld());
 		model->render();
 
-		mjt::SceneNode::render();
+		mjt::SceneNode::render(shader, camera);
 	}
 };

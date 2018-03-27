@@ -8,12 +8,11 @@
 #include "MJT/Texture.h"
 
 #include "TestSceneNode.h"
+#include "FloorSceneNode.h"
 
 class TestScene : public mjt::Scene 
 {
 private:
-	TestSceneNode * testNode;
-
 	mjt::ShaderProgram* m_shader;
 	mjt::PerspectiveCamera* m_camera;
 
@@ -31,14 +30,17 @@ public:
 
 	void init()
 	{
-		TestSceneNode* node = new TestSceneNode();
-		addNode(node);
+		addNode(new TestSceneNode());
+		addNode(new FloorSceneNode());
 
 		m_shader = new mjt::ShaderProgram();
 		m_shader->init("Assets/Shaders/vertex.glsl", "Assets/Shaders/fragment.glsl");
 
-		m_camera = new mjt::PerspectiveCamera(mjt::CameraSettings());
-		m_camera->setPosition(glm::vec3(3.f, 3.f, 4.f));
+		mjt::CameraSettings settings;
+		settings.znear = 1.f;
+
+		m_camera = new mjt::PerspectiveCamera(settings);
+		m_camera->setPosition(glm::vec3(2.f, 2.f, 3.f));
 	}
 
 	virtual void update()

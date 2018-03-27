@@ -7,22 +7,12 @@ namespace mjt
 	struct CameraSettings
 	{
 		/*Perspective settings*/
-		float fov;
-		float aspect;
-		float znear;
-		float zfar;
+		float fov = 45.f;
+		float aspect = 16.f / 9.f;
+		float znear = 0.1f;
+		float zfar = 100.f;
 
-		glm::vec3 position;
-		glm::vec3 target;
-
-		/*Constructor to init default values*/
-		CameraSettings():
-			fov(45.f),
-			aspect(16.f / 9.f),
-			znear(0.1f),
-			zfar(100.f),
-			position(0.f, 0.f, 0.f),
-			target(0.f,0.f,0.f)
-		{}
+		glm::vec3 position = glm::vec3(0.f, 0.f, 0.f);
+		glm::vec3 target = glm::vec3(0.f, 0.f, 0.f);
 	};
 }
