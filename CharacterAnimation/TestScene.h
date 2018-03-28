@@ -10,22 +10,28 @@
 #include "TestSceneNode.h"
 #include "FloorSceneNode.h"
 
+#include "MJT/GltfModel.h"
+
 class TestScene : public mjt::Scene 
 {
 private:
 	mjt::ShaderProgram* m_shader;
 	mjt::PerspectiveCamera* m_camera;
 
+	mjt::GltfModel* model;
+
 public:
 	TestScene() : mjt::Scene("Main")
 	{
-
+		model = new mjt::GltfModel("Assets/Models/BoxTextured.gltf");
 	}
 
 	~TestScene()
 	{
 		delete m_shader;
 		delete m_camera;
+
+		delete model;
 	}
 
 	void init()

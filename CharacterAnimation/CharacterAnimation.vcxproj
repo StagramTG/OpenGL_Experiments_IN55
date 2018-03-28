@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MJT\GltfModel.cpp" />
     <ClCompile Include="MJT\BufferObject.cpp" />
     <ClCompile Include="MJT\Camera.cpp" />
     <ClCompile Include="MJT\ColoredModel.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FloorSceneNode.h" />
+    <ClInclude Include="MJT\GltfModel.h" />
     <ClInclude Include="MJT\BufferObject.h" />
     <ClInclude Include="MJT\Camera.h" />
     <ClInclude Include="MJT\CameraSettings.h" />

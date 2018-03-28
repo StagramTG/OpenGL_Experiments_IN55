@@ -5,8 +5,6 @@ namespace mjt
 {
 	PerspectiveCamera::PerspectiveCamera(CameraSettings settings): Camera()
 	{
-		std::cout << "ZNEAR " << m_settings.znear << std::endl;
-		std::cout << "ZFAR " << m_settings.zfar << std::endl;
 	}
 
 	PerspectiveCamera::~PerspectiveCamera()
