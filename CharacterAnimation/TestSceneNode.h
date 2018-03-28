@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include "MJT/GLTF2/gltf2Loader.h"
 
 #include "MJT/SceneNode.h"
 #include "MJT/TexturedModel.h"
