@@ -1,6 +1,7 @@
 #include "GltfModel.h"
 
 #include <iostream>
+#include <string>
 
 namespace mjt
 {
@@ -18,10 +19,16 @@ namespace mjt
 		
 		gltf2::Accessor accessor_ind = asset.accessors[mesh.primitives[0].indices];
 
-		std::cout << "POSITION : " << mesh.primitives[0].attributes["POSITION"] << std::endl;
-		std::cout << "TEX : " << mesh.primitives[0].attributes["TEXCOORD_0"] << std::endl;
-		std::cout << "NORMAL : " << mesh.primitives[0].attributes["NORMAL"] << std::endl;
-		std::cout << "INDICES : " << mesh.primitives[0].indices << std::endl;
+		gltf2::BufferView bufferView = asset.bufferViews[accessor_ind.bufferView];
+		gltf2::Buffer buffer = asset.buffers[bufferView.buffer];
+
+		GLuint* x = new GLuint[accessor_ind.count];
+		std::memcpy(x, buffer.data+bufferView.byteOffset, bufferView.byteLength);
+
+		for(size_t i = 0; i < accessor_pos.count; ++i)
+			std::cout << x[i] << std::endl;
+
+		delete[] x;
 
 		/*Setup VAO with model data*/
 		vao = new VertexArrayObject();
