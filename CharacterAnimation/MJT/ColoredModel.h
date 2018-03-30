@@ -25,6 +25,6 @@ namespace mjt
 		);
 		~ColoredModel();
 
-		void render() override;
+		void render(ShaderProgram* shader, Camera* camera) override;
 	};
 }

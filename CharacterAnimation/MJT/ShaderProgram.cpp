@@ -130,4 +130,15 @@ namespace mjt
 	{
 		glUniformMatrix4fv(location, 1, GL_FALSE, &mvp[0][0]);
 	}
+
+	GLuint ShaderProgram::getSubroutineLocation(GLenum shaderType, const char * name)
+	{
+		GLuint location = glGetSubroutineUniformLocation(m_id, shaderType, name);
+		return location;
+	}
+
+	void ShaderProgram::setUniformSubroutine(GLenum shaderType, GLuint index)
+	{
+		glUniformSubroutinesuiv(shaderType, 1, &index);
+	}
 }

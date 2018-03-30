@@ -4,12 +4,12 @@
 #include "MJT/GLTF2/gltf2Loader.h"
 
 #include "MJT/SceneNode.h"
-#include "MJT/TexturedModel.h"
+#include "MJT/ColoredModel.h"
 
 class TestSceneNode : public mjt::SceneNode
 {
 private:
-	mjt::TexturedModel* model;
+	mjt::ColoredModel* model;
 
 public:
 	TestSceneNode()
@@ -28,15 +28,15 @@ public:
 		};
 
 		GLfloat colors[] = {
-			0, 0,
-			1, 0,
-			1, 1,
-			0, 1,
+			0, 0, 0,
+			1, 0, 0,
+			1, 1, 0,
+			0, 1, 0,
 
-			0, 0,
-			1, 0,
-			1, 1,
-			0, 1,
+			0, 0, 0,
+			1, 0, 0,
+			1, 1, 0,
+			0, 1, 0,
 		};
 
 		GLuint index[] = {
@@ -61,10 +61,10 @@ public:
 		};
 
 		std::vector<GLfloat> data(vertices, vertices + 24);
-		std::vector<GLfloat> col(colors, colors + 16);
+		std::vector<GLfloat> col(colors, colors + 24);
 		std::vector<GLuint> ind(index, index + 36);
 
-		model = new mjt::TexturedModel(GL_TRIANGLES, data, col, ind, "Assets/Images/stone.png");
+		model = new mjt::ColoredModel(GL_TRIANGLES, data, col, ind);
 		m_transform->setScale(glm::vec3(0.5f));
 	}
 
@@ -85,7 +85,7 @@ public:
 		GLuint loc = shader->getUniformLocation("mvp");
 		shader->setUniformMat4(loc, camera->getMatrix() * m_transform->getToWorld());
 
-		model->render();
+		model->render(shader, camera);
 
 		mjt::SceneNode::render(shader, camera);
 	}

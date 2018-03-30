@@ -20,19 +20,19 @@ namespace mjt
 		m_vao->bind();
 
 		/*Build VBO*/
-		m_vao->enableAttribArray(0);
+		m_vao->enableAttribArray(Model::GLSL_LOC_POS);
 		m_vbo = new VertexBufferObject();
 		m_vbo->bind();
 		m_vbo->setData(vertices);
-		m_vao->attribPointer(0, 3, GL_FLOAT, GL_FALSE, 0);
+		m_vao->attribPointer(Model::GLSL_LOC_POS, 3, GL_FLOAT, GL_FALSE, 0);
 		m_vbo->unbind();
 
 		/*Build TBO*/
-		m_vao->enableAttribArray(1);
+		m_vao->enableAttribArray(Model::GLSL_LOC_UVS);
 		m_tbo = new VertexBufferObject();
 		m_tbo->bind();
 		m_tbo->setData(uvs);
-		m_vao->attribPointer(1, 2, GL_FLOAT, GL_FALSE, 0);
+		m_vao->attribPointer(Model::GLSL_LOC_UVS, 2, GL_FLOAT, GL_FALSE, 0);
 		m_tbo->unbind();
 
 
@@ -55,8 +55,15 @@ namespace mjt
 		delete m_texture;
 	}
 
-	void TexturedModel::render()
+	void TexturedModel::render(ShaderProgram* shader, Camera* camera)
 	{
+		/*Set subroutine to use in shader*/
+		GLuint subVertexLoc = shader->getSubroutineLocation(GL_VERTEX_SHADER, "passOutUvs");
+		GLuint subFragmentLoc = shader->getSubroutineLocation(GL_FRAGMENT_SHADER, "outFromTexture");
+		
+		shader->setUniformSubroutine(GL_VERTEX_SHADER, subVertexLoc);
+		shader->setUniformSubroutine(GL_FRAGMENT_SHADER, subFragmentLoc);
+
 		m_texture->bind();
 		m_vao->bind();
 

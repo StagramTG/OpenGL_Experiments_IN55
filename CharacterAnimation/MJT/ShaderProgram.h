@@ -24,5 +24,9 @@ namespace mjt
 
 		GLuint getUniformLocation(const char* name);
 		void setUniformMat4(GLuint location, glm::mat4 mvp);
+
+		/* Subroutines */
+		GLuint getSubroutineLocation(GLenum shaderType, const char* name);
+		void setUniformSubroutine(GLenum shaderType, GLuint index);
 	};
 }

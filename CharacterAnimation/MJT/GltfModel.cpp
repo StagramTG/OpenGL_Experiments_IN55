@@ -21,38 +21,19 @@ namespace mjt
 
 		gltf2::BufferView bufferView = asset.bufferViews[accessor_ind.bufferView];
 		gltf2::Buffer buffer = asset.buffers[bufferView.buffer];
-
-		GLuint* x = new GLuint[accessor_ind.count];
-		std::memcpy(x, buffer.data+bufferView.byteOffset, bufferView.byteLength);
-
-		for(size_t i = 0; i < accessor_pos.count; ++i)
-			std::cout << x[i] << std::endl;
-
-		delete[] x;
-
-		/*Setup VAO with model data*/
-		vao = new VertexArrayObject();
-		vao->bind();
-
-		vao->enableAttribArray(0);
-
-		vbo = new VertexBufferObject();
-		vbo->bind();
-		
-		GLfloat v_data[1];
 	}
 
 	GltfModel::~GltfModel()
 	{
-		delete vbo;
+		//delete vbo;
 		//delete uvs;
 		//delete normal;
 		//delete indices;
 
-		delete vao;
+		//delete vao;
 	}
 
-	void GltfModel::render()
+	void GltfModel::render(ShaderProgram* shader, Camera* camera)
 	{
 	}
 }

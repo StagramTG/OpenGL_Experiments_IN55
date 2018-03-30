@@ -24,6 +24,6 @@ namespace mjt
 		GltfModel(const char* file);
 		~GltfModel();
 
-		void render() override;
+		void render(ShaderProgram* shader, Camera* camera) override;
 	};
 }

@@ -1,12 +1,10 @@
 #pragma once
 
 #include "MJT/Entity.h"
-#include "MJT/ColoredModel.h"
 
 class TestEntity: public mjt::Entity
 {
 private:
-	mjt::ColoredModel* model;
 
 public:
 	TestEntity();

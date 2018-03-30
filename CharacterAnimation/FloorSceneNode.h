@@ -57,7 +57,7 @@ public:
 	{
 		GLuint mvp = shader->getUniformLocation("mvp");
 		shader->setUniformMat4(mvp, camera->getMatrix() * m_transform->getToWorld());
-		model->render();
+		model->render(shader, camera);
 
 		mjt::SceneNode::render(shader, camera);
 	}

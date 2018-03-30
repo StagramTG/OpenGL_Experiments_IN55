@@ -29,6 +29,6 @@ namespace mjt
 		);
 		~TexturedModel();
 
-		void render() override;
+		void render(ShaderProgram* shader, Camera* camera) override;
 	};
 }
