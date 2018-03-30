@@ -133,7 +133,7 @@ namespace mjt
 
 	GLuint ShaderProgram::getSubroutineLocation(GLenum shaderType, const char * name)
 	{
-		GLuint location = glGetSubroutineUniformLocation(m_id, shaderType, name);
+		GLuint location = glGetSubroutineIndex(m_id, shaderType, name);
 		return location;
 	}
 

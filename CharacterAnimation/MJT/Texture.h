@@ -1,6 +1,5 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
 #include <GL/glew.h>
 
 namespace mjt
@@ -8,7 +7,7 @@ namespace mjt
 	class Texture
 	{
 	private:
-		sf::Image* m_texture;
+		GLuint m_id;
 
 	public:
 		Texture(const char* file);

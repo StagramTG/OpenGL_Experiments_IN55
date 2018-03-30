@@ -53,7 +53,7 @@ namespace mjt
 		/*Set subroutine to use in shader*/
 		GLuint subVertexLoc = shader->getSubroutineLocation(GL_VERTEX_SHADER, "passOutColor");
 		GLuint subFragmentLoc = shader->getSubroutineLocation(GL_FRAGMENT_SHADER, "outFromColor");
-		
+
 		shader->setUniformSubroutine(GL_VERTEX_SHADER, subVertexLoc);
 		shader->setUniformSubroutine(GL_FRAGMENT_SHADER, subFragmentLoc);
 

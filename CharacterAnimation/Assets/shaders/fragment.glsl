@@ -8,8 +8,6 @@ subroutine uniform outFragColor fragColor;
 in vec2 outUvs;
 in vec3 outColor;
 
-out vec4 frag_color;
-
 subroutine(outFragColor)
 vec4 outFromTexture()
 {
@@ -21,6 +19,8 @@ vec4 outFromColor()
 {
 	return vec4(outColor.xyz, 1.0);
 }
+
+out vec4 frag_color;
 
 void main()
 {
