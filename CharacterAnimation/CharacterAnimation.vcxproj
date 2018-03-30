@@ -159,6 +159,7 @@
     <ClInclude Include="MJT\GLTF2\gltf2Loader.h" />
     <ClInclude Include="MJT\IndicesBufferObject.h" />
     <ClInclude Include="MJT\Model.h" />
+    <ClInclude Include="MJT\stbImage.h" />
     <ClInclude Include="MJT\Transform.h" />
     <ClInclude Include="OglWindow.h" />
     <ClInclude Include="MJT\OglWindowAbs.h" />

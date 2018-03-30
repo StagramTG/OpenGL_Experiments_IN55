@@ -28,5 +28,8 @@ namespace mjt
 		/* Subroutines */
 		GLuint getSubroutineLocation(GLenum shaderType, const char* name);
 		void setUniformSubroutine(GLenum shaderType, GLuint index);
+
+		/* Textures */
+		void setUniformInt(GLuint location, GLuint value);
 	};
 }

@@ -141,4 +141,9 @@ namespace mjt
 	{
 		glUniformSubroutinesuiv(shaderType, 1, &index);
 	}
+
+	void ShaderProgram::setUniformInt(GLuint location, GLuint value)
+	{
+		glUniform1i(location, value);
+	}
 }

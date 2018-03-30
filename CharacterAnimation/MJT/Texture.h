@@ -1,13 +1,14 @@
 #pragma once
 
-#include <SFML\Graphics.hpp>
+#include <SFML/Graphics.hpp>
+#include <GL/glew.h>
 
 namespace mjt
 {
 	class Texture
 	{
 	private:
-		sf::Texture* m_texture;
+		sf::Image* m_texture;
 
 	public:
 		Texture(const char* file);
@@ -15,5 +16,6 @@ namespace mjt
 
 		void bind();
 		void unbind();
+		GLuint getId();
 	};
 }
