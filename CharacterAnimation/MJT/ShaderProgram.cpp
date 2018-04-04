@@ -146,4 +146,9 @@ namespace mjt
 	{
 		glUniform1i(location, value);
 	}
+
+	void ShaderProgram::setUniformFloat(GLuint location, GLfloat value)
+	{
+		glUniform1f(location, value);
+	}
 }

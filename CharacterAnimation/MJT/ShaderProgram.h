@@ -31,5 +31,8 @@ namespace mjt
 
 		/* Textures */
 		void setUniformInt(GLuint location, GLuint value);
+
+		/* Float value */
+		void setUniformFloat(GLuint location, GLfloat value);
 	};
 }
