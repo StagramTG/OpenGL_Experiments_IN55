@@ -45,6 +45,12 @@ public:
 
 		m_camera = new mjt::PerspectiveCamera(settings);
 		m_camera->setPosition(glm::vec3(2.f, 2.f, 3.f));
+
+		mjt::AmbiantLightData ambiantLightData;
+		ambiantLightData.intensity = 0.1f;
+		ambiantLightData.color = glm::vec3(1.f, 1.f, 1.f);
+
+		m_ambiantLight = new mjt::AmbiantLight(ambiantLightData);
 	}
 
 	virtual void update()
@@ -57,6 +63,12 @@ public:
 	virtual void render(mjt::ShaderProgram* shader, mjt::Camera* camera)
 	{
 		m_shader->use();
+
+		GLuint aIntensity = m_shader->getUniformLocation("ambiant.intensity");
+		GLuint aColor = m_shader->getUniformLocation("ambiant.color");
+
+		m_shader->setUniformFloat(aIntensity, m_ambiantLight->getIntensity());
+		m_shader->setUniformVec3Float(aColor, m_ambiantLight->getColor());
 
 		mjt::Scene::render(m_shader, m_camera);
 

@@ -22,5 +22,8 @@ namespace mjt
 
 		GLfloat getIntensity();
 		glm::vec3 getColor();
+
+		void setIntensity(GLfloat intensity);
+		void setColor(glm::vec3 color);
 	};
 }

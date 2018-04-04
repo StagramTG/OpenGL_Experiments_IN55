@@ -7,7 +7,7 @@ struct AmbiantLight
 {
 	float intensity;
 	vec3 color;
-}
+};
 
 // Subroutine declaration
 subroutine vec4 outFragColor();
