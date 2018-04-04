@@ -14,9 +14,13 @@ namespace mjt
 	class AmbiantLight
 	{
 	private:
+		AmbiantLightData m_data;
 
 	public:
-		AmbiantLight();
+		AmbiantLight(AmbiantLightData data);
 		~AmbiantLight();
+
+		GLfloat getIntensity();
+		glm::vec3 getColor();
 	};
 }

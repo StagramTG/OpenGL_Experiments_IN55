@@ -75,6 +75,9 @@
     <ClCompile Include="MJT\GltfModel.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="MJT\AmbiantLight.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OglWindow.h">

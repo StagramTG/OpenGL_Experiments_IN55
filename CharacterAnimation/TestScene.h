@@ -6,6 +6,7 @@
 #include "MJT/ShaderProgram.h"
 #include "MJT/PerspectiveCamera.h"
 #include "MJT/Texture.h"
+#include "MJT/AmbiantLight.h"
 
 #include "TestSceneNode.h"
 #include "FloorSceneNode.h"
@@ -17,6 +18,8 @@ class TestScene : public mjt::Scene
 private:
 	mjt::ShaderProgram* m_shader;
 	mjt::PerspectiveCamera* m_camera;
+
+	mjt::AmbiantLight* m_ambiantLight;
 
 public:
 	TestScene() : mjt::Scene("Main")

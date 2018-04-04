@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MJT\AmbiantLight.cpp" />
     <ClCompile Include="MJT\GltfModel.cpp" />
     <ClCompile Include="MJT\BufferObject.cpp" />
     <ClCompile Include="MJT\Camera.cpp" />
