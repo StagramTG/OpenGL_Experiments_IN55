@@ -149,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FloorSceneNode.h" />
+    <ClInclude Include="MJT\AmbiantLight.h" />
     <ClInclude Include="MJT\GltfModel.h" />
     <ClInclude Include="MJT\BufferObject.h" />
     <ClInclude Include="MJT\Camera.h" />
