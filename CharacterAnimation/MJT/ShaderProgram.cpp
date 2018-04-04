@@ -151,4 +151,9 @@ namespace mjt
 	{
 		glUniform1f(location, value);
 	}
+
+	void ShaderProgram::setUniformVec3Float(GLuint location, glm::vec3 value)
+	{
+		glUniform3f(location, value.x, value.y, value.z);
+	}
 }

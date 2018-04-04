@@ -34,5 +34,6 @@ namespace mjt
 
 		/* Float value */
 		void setUniformFloat(GLuint location, GLfloat value);
+		void setUniformVec3Float(GLuint location, glm::vec3 value);
 	};
 }
