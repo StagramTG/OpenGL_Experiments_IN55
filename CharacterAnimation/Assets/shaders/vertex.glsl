@@ -1,4 +1,4 @@
-#version 330 core
+#version 400
 
 // Access vertex position data
 layout(location=0) in vec3 position;
