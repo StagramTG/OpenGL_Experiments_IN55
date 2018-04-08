@@ -35,6 +35,11 @@ namespace mjt
 		FreeImage_Unload(image);
 	}
 
+	Texture::Texture(GLuint nativeHandle)
+	{
+		m_id = nativeHandle;
+	}
+
 	Texture::~Texture()
 	{
 		glDeleteTextures(1, &m_id);

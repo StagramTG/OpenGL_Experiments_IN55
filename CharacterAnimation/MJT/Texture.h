@@ -12,6 +12,7 @@ namespace mjt
 
 	public:
 		Texture(const char* file);
+		Texture(GLuint nativeHandle);
 		~Texture();
 
 		void bind();
