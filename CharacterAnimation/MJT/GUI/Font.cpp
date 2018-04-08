@@ -17,11 +17,17 @@ namespace mjt
 			}
 
 			// Get texture id
-			m_textureId = m_font.getTexture(fontSize).getNativeHandle();
+			m_texture = new Texture(m_font.getTexture(fontSize).getNativeHandle());
 		}
 
 		Font::~Font()
 		{
+			delete m_texture;
+		}
+
+		Texture * Font::getTexture()
+		{
+			return m_texture;
 		}
 	}
 }
