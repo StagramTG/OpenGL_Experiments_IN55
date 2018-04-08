@@ -1,10 +1,16 @@
 #include "Texture.h"
-#include "STB/StbImage.h"
 
 namespace mjt
 {
 	Texture::Texture(const char * file)
 	{
+		FREE_IMAGE_FORMAT imageFormat = FreeImage_GetFileType(file);
+		FIBITMAP* image(0);
+
+		image = FreeImage_Load(imageFormat, file);
+
+		BYTE* data = FreeImage_GetBits(image);
+
 		/*Generate OpenGL texture*/
 		glGenTextures(1, &m_id);
 		glBindTexture(GL_TEXTURE_2D, m_id);
@@ -16,16 +22,17 @@ namespace mjt
 		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 		/*Load image from file*/
-		int width, height, channels;
+		int width, height;
 		/*Load data from file*/
-		unsigned char* data = stbi_load(file, &width, &height, &channels, 0);
+		width = FreeImage_GetWidth(image);
+		height = FreeImage_GetHeight(image);
 
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);
 
-		stbi_image_free(data);
-
 		glBindTexture(GL_TEXTURE_2D, 0);
+
+		FreeImage_Unload(image);
 	}
 
 	Texture::~Texture()
