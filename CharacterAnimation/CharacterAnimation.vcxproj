@@ -143,6 +143,7 @@
     <ClCompile Include="MJT\GUI\Label.cpp" />
     <ClCompile Include="MJT\IndicesBufferObject.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MJT\OrthoCamera.cpp" />
     <ClCompile Include="MJT\RenderBufferObject.cpp" />
     <ClCompile Include="MJT\Transform.cpp" />
     <ClCompile Include="OglWindow.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="MJT\FrameBufferObject.h" />
     <ClInclude Include="MJT\IndicesBufferObject.h" />
     <ClInclude Include="MJT\Model.h" />
+    <ClInclude Include="MJT\OrthoCamera.h" />
     <ClInclude Include="MJT\RenderBufferObject.h" />
     <ClInclude Include="MJT\Transform.h" />
     <ClInclude Include="OglWindow.h" />

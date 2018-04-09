@@ -3,7 +3,7 @@
 
 namespace mjt
 {
-	PerspectiveCamera::PerspectiveCamera(CameraSettings settings): Camera()
+	PerspectiveCamera::PerspectiveCamera(CameraSettings settings): Camera(settings)
 	{
 	}
 
