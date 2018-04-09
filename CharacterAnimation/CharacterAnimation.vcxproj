@@ -138,6 +138,7 @@
     <ClCompile Include="MJT\Entity.cpp" />
     <ClCompile Include="MJT\GLTF2\gltf2Loader.cpp" />
     <ClCompile Include="MJT\GUI\GuiManager.cpp" />
+    <ClCompile Include="MJT\GUI\Label.cpp" />
     <ClCompile Include="MJT\IndicesBufferObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MJT\Transform.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="MJT\GLTF2\gltf2Exceptions.h" />
     <ClInclude Include="MJT\GLTF2\gltf2Loader.h" />
     <ClInclude Include="MJT\GUI\GuiManager.h" />
+    <ClInclude Include="MJT\GUI\Label.h" />
     <ClInclude Include="MJT\IndicesBufferObject.h" />
     <ClInclude Include="MJT\Model.h" />
     <ClInclude Include="MJT\Transform.h" />
