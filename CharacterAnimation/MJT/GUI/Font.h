@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../FreeType/ft2build.h"
+#include <ft2build.h>
 #include FT_FREETYPE_H
 
 namespace mjt

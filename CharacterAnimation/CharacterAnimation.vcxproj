@@ -70,13 +70,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)vendors\include;D:\Documents\DEV\VisualStudio2015\CharacterAnimation\CharacterAnimation\MJT\FreeType;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)CharacterAnimation\MJT\FreeType\;$(SolutionDir)vendors\include;D:\Documents\DEV\VisualStudio2015\CharacterAnimation\CharacterAnimation\MJT\FreeType;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)vendors\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>D:\Documents\DEV\VisualStudio2015\CharacterAnimation\vendors\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)CharacterAnimation\MJT\FreeType\;D:\Documents\DEV\VisualStudio2015\CharacterAnimation\vendors\include;$(IncludePath)</IncludePath>
     <LibraryPath>D:\Documents\DEV\VisualStudio2015\CharacterAnimation\vendors\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\$(Configuration)\</IntDir>
@@ -131,6 +131,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MJT\AmbiantLight.cpp" />
+    <ClCompile Include="MJT\FrameBufferObject.cpp" />
     <ClCompile Include="MJT\GltfModel.cpp" />
     <ClCompile Include="MJT\BufferObject.cpp" />
     <ClCompile Include="MJT\Camera.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="MJT\GUI\GuiElement.h" />
     <ClInclude Include="MJT\GUI\GuiManager.h" />
     <ClInclude Include="MJT\GUI\Label.h" />
+    <ClInclude Include="MJT\FrameBufferObject.h" />
     <ClInclude Include="MJT\IndicesBufferObject.h" />
     <ClInclude Include="MJT\Model.h" />
     <ClInclude Include="MJT\Transform.h" />

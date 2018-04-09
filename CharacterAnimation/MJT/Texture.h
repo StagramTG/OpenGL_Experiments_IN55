@@ -11,8 +11,13 @@ namespace mjt
 		GLuint m_id;
 
 	public:
+		// Load texture from file
 		Texture(const char* file);
+		// Only reference a texture created outside this class
 		Texture(GLuint nativeHandle);
+		// Create an empty texture
+		Texture(GLuint width, GLuint height);
+
 		~Texture();
 
 		void bind();

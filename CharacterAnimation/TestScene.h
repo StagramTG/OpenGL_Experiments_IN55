@@ -47,7 +47,7 @@ public:
 		m_camera->setPosition(glm::vec3(2.f, 2.f, 3.f));
 
 		mjt::AmbiantLightData ambiantLightData;
-		ambiantLightData.intensity = 1.f;
+		ambiantLightData.intensity = 0.2f;
 		ambiantLightData.color = glm::vec3(1.f, 1.f, 1.f);
 
 		m_ambiantLight = new mjt::AmbiantLight(ambiantLightData);

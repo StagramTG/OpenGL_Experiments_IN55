@@ -13,13 +13,13 @@ namespace mjt
 
 		/*Generate OpenGL texture*/
 		glGenTextures(1, &m_id);
-		glBindTexture(GL_TEXTURE_2D, m_id);
+		bind();
 
 		// set the texture wrapping/filtering options (on the currently bound texture object)
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
 		/*Load image from file*/
 		int width, height;
@@ -30,7 +30,7 @@ namespace mjt
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);
 
-		glBindTexture(GL_TEXTURE_2D, 0);
+		unbind();
 
 		FreeImage_Unload(image);
 	}
@@ -38,6 +38,10 @@ namespace mjt
 	Texture::Texture(GLuint nativeHandle)
 	{
 		m_id = nativeHandle;
+	}
+
+	Texture::Texture(GLuint width, GLuint height)
+	{
 	}
 
 	Texture::~Texture()
