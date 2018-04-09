@@ -28,3 +28,9 @@ namespace mjt
 		};
 	}
 }
+
+/*
+	- Create a VAO with vbo and uvs buffers
+	- Create shaders to "print" glyphs on texture
+	- Create drawing code
+*/

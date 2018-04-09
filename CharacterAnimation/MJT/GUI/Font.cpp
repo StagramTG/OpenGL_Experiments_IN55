@@ -63,6 +63,7 @@ void mjt::gui::Font::loadFromFile(const char * fontFile, int fontSize)
 	OrthoCamera camera(cSettings);
 
 	// Create each glyph and render to FrameBufferObject, so on texture.
+	Texture tmpGlyphTex(25, 25);
 	GLuint x = 0, y = 0;
 	for (GLubyte c = 0; c < 128; ++c)
 	{
@@ -87,8 +88,12 @@ void mjt::gui::Font::loadFromFile(const char * fontFile, int fontSize)
 			y += fontSize;
 		}
 
-		// Draw in FrameBufferObject
+		// Set the data to Texture for current glyph
+		tmpGlyphTex.setData(glyph.size.x, glyph.size.y, face->glyph->bitmap.buffer);
 
+		// Bind uniforms for scalling and positioning in texture
+
+		// draw call
 
 		// Add the glyph to glyphs
 		glyphs.insert(std::pair<char, Glyph>((char)c, glyph));
