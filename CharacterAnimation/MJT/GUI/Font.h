@@ -10,11 +10,14 @@ namespace mjt
 		class Font
 		{
 		private:
-			FT_Library lib;
 
 		public:
 			Font();
+			Font(const char* fontFile);
 			~Font();
+
+			void loadFromFile(const char* fontFile);
+			void loadToTexture();
 		};
 	}
 }
