@@ -165,6 +165,7 @@
     <ClInclude Include="MJT\Entity.h" />
     <ClInclude Include="MJT\GLTF2\gltf2Exceptions.h" />
     <ClInclude Include="MJT\GLTF2\gltf2Loader.h" />
+    <ClInclude Include="MJT\GUI\GuiElement.h" />
     <ClInclude Include="MJT\GUI\GuiManager.h" />
     <ClInclude Include="MJT\GUI\Label.h" />
     <ClInclude Include="MJT\IndicesBufferObject.h" />
