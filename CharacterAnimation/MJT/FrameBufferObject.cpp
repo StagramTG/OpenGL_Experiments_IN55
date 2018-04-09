@@ -33,3 +33,30 @@ mjt::Texture * mjt::FrameBufferObject::getTexture()
 {
 	return m_texture;
 }
+
+void mjt::FrameBufferObject::setRenderBuffer(mjt::RenderBufferObject * renderBuffer)
+{
+	m_renderBuffer = renderBuffer;
+
+	bind();
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, m_renderBuffer->getId());
+	unbind();
+}
+
+mjt::RenderBufferObject * mjt::FrameBufferObject::getRenderBuffer()
+{
+	return m_renderBuffer;
+}
+
+bool mjt::FrameBufferObject::isComplete()
+{
+	bind();
+	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+	{
+		unbind();
+		return false;
+	}
+
+	unbind();
+	return true;
+}
