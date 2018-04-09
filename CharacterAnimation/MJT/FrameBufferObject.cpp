@@ -7,6 +7,9 @@ mjt::FrameBufferObject::FrameBufferObject()
 
 mjt::FrameBufferObject::~FrameBufferObject()
 {
+	delete m_texture;
+	delete m_renderBuffer;
+
 	glDeleteFramebuffers(1, &m_id);
 }
 

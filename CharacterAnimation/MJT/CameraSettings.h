@@ -15,9 +15,9 @@ namespace mjt
 		glm::vec3 position = glm::vec3(0.f, 0.f, 0.f);
 		glm::vec3 target = glm::vec3(0.f, 0.f, 0.f);
 
-		unsigned int left = 0;
-		unsigned int right = 854;
-		unsigned int top = 0;
-		unsigned int bottom = 480;
+		int left = 0;
+		int right = 854;
+		int top = 0;
+		int bottom = 480;
 	};
 }

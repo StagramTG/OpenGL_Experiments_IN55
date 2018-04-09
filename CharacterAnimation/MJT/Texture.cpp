@@ -59,6 +59,13 @@ namespace mjt
 		glDeleteTextures(1, &m_id);
 	}
 
+	void Texture::setData(GLuint width, GLuint height, const void * data)
+	{
+		bind();
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+		unbind();
+	}
+
 	void Texture::bind()
 	{
 		glActiveTexture(GL_TEXTURE0);

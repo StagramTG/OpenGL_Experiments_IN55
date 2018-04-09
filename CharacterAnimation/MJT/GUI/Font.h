@@ -2,9 +2,11 @@
 
 #include <ft2build.h>
 #include FT_FREETYPE_H
+#include <map>
 
 #include "../FrameBufferObject.h"
 #include "../OrthoCamera.h"
+#include "Glyph.h"
 
 namespace mjt
 {
@@ -13,6 +15,7 @@ namespace mjt
 		class Font
 		{
 		private:
+			std::map<char, Glyph> glyphs;
 			FrameBufferObject * m_fbo;
 
 		public:

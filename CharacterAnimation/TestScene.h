@@ -13,6 +13,8 @@
 
 #include "MJT/ColoredModel.h"
 
+#include "MJT/GUI/Font.h"
+
 class TestScene : public mjt::Scene 
 {
 private:
@@ -51,6 +53,8 @@ public:
 		ambiantLightData.color = glm::vec3(1.f, 1.f, 1.f);
 
 		m_ambiantLight = new mjt::AmbiantLight(ambiantLightData);
+
+		mjt::gui::Font font("Assets/Fonts/OpenSans.ttf", 48);
 	}
 
 	virtual void update()

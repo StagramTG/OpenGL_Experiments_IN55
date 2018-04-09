@@ -20,6 +20,8 @@ namespace mjt
 
 		~Texture();
 
+		void setData(GLuint width, GLuint height, const void* data);
+
 		void bind();
 		void unbind();
 		GLuint getId();
