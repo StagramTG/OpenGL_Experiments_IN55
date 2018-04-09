@@ -173,5 +173,8 @@
     <ClInclude Include="MJT\GUI\GuiElement.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="MJT\GUI\Font.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
