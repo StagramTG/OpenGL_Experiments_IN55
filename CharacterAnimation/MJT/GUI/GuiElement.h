@@ -9,7 +9,6 @@ namespace mjt
 		class GuiElement
 		{
 		protected:
-			glm::vec3 m_position;
 
 		public:
 			GuiElement() {}
