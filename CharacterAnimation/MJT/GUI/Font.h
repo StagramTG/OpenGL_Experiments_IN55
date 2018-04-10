@@ -3,10 +3,17 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 #include <map>
+#include <vector>
+#include <glm/gtc/matrix_transform.hpp>
 
 #include "../FrameBufferObject.h"
 #include "../OrthoCamera.h"
 #include "Glyph.h"
+
+#include "../VertexArrayObject.h"
+#include "../VertexBufferObject.h"
+
+#include "../ShaderProgram.h"
 
 namespace mjt
 {
