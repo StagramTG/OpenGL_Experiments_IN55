@@ -64,12 +64,12 @@ namespace mjt
 		shader->setUniformSubroutine(GL_VERTEX_SHADER, subVertexLoc);
 		shader->setUniformSubroutine(GL_FRAGMENT_SHADER, subFragmentLoc);
 
-		m_texture->bind();
+		//m_texture->bind();
 		m_vao->bind();
 
 		glDrawElements(m_drawMode, m_verticesCount, GL_UNSIGNED_INT, 0);
 
 		m_vao->unbind();
-		m_texture->unbind();
+		//m_texture->unbind();
 	}
 }

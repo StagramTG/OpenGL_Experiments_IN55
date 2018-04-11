@@ -2,11 +2,13 @@
 
 #include "MJT\SceneNode.h"
 #include "MJT\TexturedModel.h"
+#include "MJT\GUI\Font.h"
 
 class FloorSceneNode: public mjt::SceneNode
 {
 private:
 	mjt::TexturedModel* model;
+	mjt::gui::Font* font;
 
 public:
 	FloorSceneNode(): mjt::SceneNode()
@@ -20,9 +22,9 @@ public:
 
 		GLfloat tex[] = {
 			0.f, 0.f,
-			3.f, 0.f,
-			0.f, 3.f,
-			3.f, 3.f,
+			1.f, 0.f,
+			0.f, 1.f,
+			1.f, 1.f,
 		};
 
 		GLuint ind[] = {
@@ -44,11 +46,14 @@ public:
 
 		m_transform->setPosition(glm::vec3(0, -0.5f, 0));
 		m_transform->setScale(glm::vec3(3, 3, 3));
+
+		font = new mjt::gui::Font("Assets/Fonts/OpenSans.ttf", 24);
 	}
 
 	~FloorSceneNode()
 	{
 		delete model;
+		delete font;
 
 		mjt::SceneNode::update();
 	}
@@ -58,7 +63,11 @@ public:
 		GLuint mvp = shader->getUniformLocation("mvp");
 		shader->setUniformMat4(mvp, camera->getMatrix() * m_transform->getToWorld());
 
+		font->getTexture()->bind();
+
 		model->render(shader, camera);
+
+		font->getTexture()->unbind();
 
 		mjt::SceneNode::render(shader, camera);
 	}

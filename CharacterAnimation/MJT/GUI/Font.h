@@ -6,6 +6,7 @@
 #include <vector>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include "../Texture.h"
 #include "Glyph.h"
 
 namespace mjt
@@ -15,7 +16,8 @@ namespace mjt
 		class Font
 		{
 		private:
-			std::map<char, Glyph> glyphs;
+			Texture * m_texture;
+			std::map<char, Glyph> m_glyphs;
 
 		public:
 			Font();
@@ -24,6 +26,8 @@ namespace mjt
 
 			void loadFromFile(const char* fontFile, int fontSize);
 			void loadToTexture();
+
+			Texture* getTexture();
 		};
 	}
 }
