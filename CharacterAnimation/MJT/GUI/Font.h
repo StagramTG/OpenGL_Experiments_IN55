@@ -6,14 +6,7 @@
 #include <vector>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "../FrameBufferObject.h"
-#include "../OrthoCamera.h"
 #include "Glyph.h"
-
-#include "../VertexArrayObject.h"
-#include "../VertexBufferObject.h"
-
-#include "../ShaderProgram.h"
 
 namespace mjt
 {
@@ -23,7 +16,6 @@ namespace mjt
 		{
 		private:
 			std::map<char, Glyph> glyphs;
-			FrameBufferObject * m_fbo;
 
 		public:
 			Font();
@@ -37,7 +29,5 @@ namespace mjt
 }
 
 /*
-	- Create a VAO with vbo and uvs buffers
-	- Create shaders to "print" glyphs on texture
-	- Create drawing code
+	- Use glTexSubImage2D to draw each glyph on texture
 */

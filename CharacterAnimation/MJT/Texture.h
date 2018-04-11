@@ -21,6 +21,7 @@ namespace mjt
 		~Texture();
 
 		void setData(GLuint width, GLuint height, const void* data);
+		void setSubImage(GLint xOffset, GLint yOffset, GLint width, GLint height, const void* data);
 
 		void bind();
 		void unbind();

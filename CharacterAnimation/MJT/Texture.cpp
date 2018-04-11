@@ -61,9 +61,12 @@ namespace mjt
 
 	void Texture::setData(GLuint width, GLuint height, const void * data)
 	{
-		bind();
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-		unbind();
+	}
+
+	void Texture::setSubImage(GLint xOffset, GLint yOffset, GLint width, GLint height, const void* data)
+	{
+		glTexSubImage2D(GL_TEXTURE_2D, 0, xOffset, yOffset, width, height, GL_RGBA, GL_UNSIGNED_BYTE, data);
 	}
 
 	void Texture::bind()
