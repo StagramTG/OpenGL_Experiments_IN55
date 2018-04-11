@@ -87,12 +87,6 @@
     <ClCompile Include="MJT\GUI\Font.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="MJT\FrameBufferObject.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="MJT\RenderBufferObject.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="MJT\OrthoCamera.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -189,12 +183,6 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="MJT\GUI\Glyph.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="MJT\FrameBufferObject.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="MJT\RenderBufferObject.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="MJT\OrthoCamera.h">

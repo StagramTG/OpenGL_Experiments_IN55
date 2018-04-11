@@ -131,7 +131,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MJT\AmbiantLight.cpp" />
-    <ClCompile Include="MJT\FrameBufferObject.cpp" />
     <ClCompile Include="MJT\GltfModel.cpp" />
     <ClCompile Include="MJT\BufferObject.cpp" />
     <ClCompile Include="MJT\Camera.cpp" />
@@ -144,7 +143,6 @@
     <ClCompile Include="MJT\IndicesBufferObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MJT\OrthoCamera.cpp" />
-    <ClCompile Include="MJT\RenderBufferObject.cpp" />
     <ClCompile Include="MJT\Transform.cpp" />
     <ClCompile Include="OglWindow.cpp" />
     <ClCompile Include="MJT\OglWindowAbs.cpp" />
@@ -174,11 +172,9 @@
     <ClInclude Include="MJT\GUI\GuiElement.h" />
     <ClInclude Include="MJT\GUI\GuiManager.h" />
     <ClInclude Include="MJT\GUI\Label.h" />
-    <ClInclude Include="MJT\FrameBufferObject.h" />
     <ClInclude Include="MJT\IndicesBufferObject.h" />
     <ClInclude Include="MJT\Model.h" />
     <ClInclude Include="MJT\OrthoCamera.h" />
-    <ClInclude Include="MJT\RenderBufferObject.h" />
     <ClInclude Include="MJT\Transform.h" />
     <ClInclude Include="OglWindow.h" />
     <ClInclude Include="MJT\OglWindowAbs.h" />
