@@ -23,8 +23,8 @@ public:
 		GLfloat tex[] = {
 			0.f, 0.f,
 			1.f, 0.f,
-			0.f, 1.f,
-			1.f, 1.f,
+			0.f, -1.f,
+			1.f, -1.f,
 		};
 
 		GLuint ind[] = {
@@ -47,7 +47,7 @@ public:
 		m_transform->setPosition(glm::vec3(0, -0.5f, 0));
 		m_transform->setScale(glm::vec3(3, 3, 3));
 
-		font = new mjt::gui::Font("Assets/Fonts/OpenSans.ttf", 24);
+		font = new mjt::gui::Font("Assets/Fonts/OpenSans.ttf", 36);
 	}
 
 	~FloorSceneNode()

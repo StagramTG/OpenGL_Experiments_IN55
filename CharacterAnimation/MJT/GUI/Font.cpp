@@ -74,7 +74,7 @@ void mjt::gui::Font::loadFromFile(const char * fontFile, int fontSize)
 		m_texture->setSubImage(x, y, face->glyph->bitmap.width, face->glyph->bitmap.rows, GL_RED, face->glyph->bitmap.buffer);
 
 		// increment x pos
-		x += glyph.size.x + 2;
+		x += face->glyph->bitmap.width + 2;
 	}
 
 	m_texture->unbind();
