@@ -19,10 +19,10 @@ namespace mjt
 			std::string m_text;
 			Font* m_font;
 
-			VertexArrayObject vao;
-			VertexBufferObject vbo;
-			VertexBufferObject uvs;
-			IndicesBufferObject indices;
+			VertexArrayObject m_vao;
+			VertexBufferObject m_vbo;
+			VertexBufferObject m_uvs;
+			IndicesBufferObject m_indices;
 
 			void buildMesh();
 
