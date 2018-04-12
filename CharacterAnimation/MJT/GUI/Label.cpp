@@ -4,25 +4,30 @@ mjt::gui::Label::Label(): GuiElement()
 {
 }
 
+mjt::gui::Label::Label(Font* font, std::string text)
+{
+	m_text = text;
+	m_font = font;
+}
+
 mjt::gui::Label::~Label()
 {
 }
 
-void mjt::gui::Label::setString(std::string text)
+void mjt::gui::Label::setFont(Font * font)
 {
-	m_text.setString(text);
+	m_font = font;
 }
 
-void mjt::gui::Label::setPosition(glm::vec2 position)
+void mjt::gui::Label::setText(std::string text)
 {
-	m_text.setPosition(position.x, position.y);
 }
 
 void mjt::gui::Label::update()
 {
 }
 
-void mjt::gui::Label::render()
+void mjt::gui::Label::render(ShaderProgram* shader, Camera* camera)
 {
 
 }
