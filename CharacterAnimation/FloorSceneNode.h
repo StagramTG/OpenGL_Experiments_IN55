@@ -46,14 +46,11 @@ public:
 
 		m_transform->setPosition(glm::vec3(0, -0.5f, 0));
 		m_transform->setScale(glm::vec3(3, 3, 3));
-
-		font = new mjt::gui::Font("Assets/Fonts/OpenSans.ttf", 36);
 	}
 
 	~FloorSceneNode()
 	{
 		delete model;
-		delete font;
 
 		mjt::SceneNode::update();
 	}
@@ -63,11 +60,7 @@ public:
 		GLuint mvp = shader->getUniformLocation("mvp");
 		shader->setUniformMat4(mvp, camera->getMatrix() * m_transform->getToWorld());
 
-		font->getTexture()->bind();
-
 		model->render(shader, camera);
-
-		font->getTexture()->unbind();
 
 		mjt::SceneNode::render(shader, camera);
 	}

@@ -31,7 +31,3 @@ namespace mjt
 		};
 	}
 }
-
-/*
-	- Use glTexSubImage2D to draw each glyph on texture
-*/

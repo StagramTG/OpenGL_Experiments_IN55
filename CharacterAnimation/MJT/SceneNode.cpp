@@ -38,6 +38,8 @@ namespace mjt
 	{
 		if (child != nullptr)
 		{
+			child->m_parent = this;
+
 			m_children.push_back(child);
 		}
 	}

@@ -1,6 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <vector>
+
+#include "GuiElement.h"
 
 namespace mjt 
 {
@@ -9,7 +12,7 @@ namespace mjt
 		class GuiManager
 		{
 		private:
-			sf::Font m_font;
+			std::vector<GuiElement*> elements;
 
 		public:
 			GuiManager();
@@ -17,6 +20,9 @@ namespace mjt
 
 			void update();
 			void render();
+
+			bool addElement(GuiElement* element);
+			bool removeElement(GuiElement* element);
 		};
 	}
 }

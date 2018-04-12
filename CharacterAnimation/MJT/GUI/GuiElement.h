@@ -1,21 +1,19 @@
 #pragma once
 
 #include <glm/gtc/matrix_transform.hpp>
+#include "../SceneNode.h"
 
 namespace mjt
 {
 	namespace gui
 	{
-		class GuiElement
+		class GuiElement: public SceneNode
 		{
 		protected:
 
 		public:
 			GuiElement() {}
 			~GuiElement() {}
-
-			virtual void update() = 0;
-			virtual void render() = 0;
 		};
 	}
 }
