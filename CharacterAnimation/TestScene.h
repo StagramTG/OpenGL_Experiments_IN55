@@ -13,6 +13,7 @@
 
 #include "MJT/ColoredModel.h"
 
+#include "MJT/GUI/GuiManager.h"
 #include "MJT/GUI/Font.h"
 
 class TestScene : public mjt::Scene 
@@ -22,6 +23,8 @@ private:
 	mjt::PerspectiveCamera* m_camera;
 
 	mjt::AmbiantLight* m_ambiantLight;
+
+	mjt::gui::GuiManager* m_gui;
 
 public:
 	TestScene() : mjt::Scene("Main")
@@ -54,7 +57,7 @@ public:
 
 		m_ambiantLight = new mjt::AmbiantLight(ambiantLightData);
 
-		mjt::gui::Font font("Assets/Fonts/OpenSans.ttf", 48);
+		m_gui = new mjt::gui::GuiManager();
 	}
 
 	virtual void update()
@@ -62,6 +65,8 @@ public:
 		m_camera->update();
 
 		mjt::Scene::update();
+
+		m_gui->update();
 	}
 
 	virtual void render(mjt::ShaderProgram* shader, mjt::Camera* camera)
@@ -77,5 +82,7 @@ public:
 		mjt::Scene::render(m_shader, m_camera);
 
 		m_shader->done();
+
+		m_gui->render(m_shader);
 	}
 };
