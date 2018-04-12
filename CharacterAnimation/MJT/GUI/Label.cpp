@@ -6,10 +6,12 @@ mjt::gui::Label::Label(): GuiElement()
 {
 }
 
-mjt::gui::Label::Label(Font* font, std::string text)
+mjt::gui::Label::Label(Font* font, std::string text) : GuiElement()
 {
 	m_text = text;
 	m_font = font;
+
+	buildMesh();
 }
 
 mjt::gui::Label::~Label()
@@ -23,6 +25,8 @@ void mjt::gui::Label::setFont(Font * font)
 
 void mjt::gui::Label::setText(std::string text)
 {
+	m_text = text;
+	buildMesh();
 }
 
 void mjt::gui::Label::update()
@@ -31,7 +35,16 @@ void mjt::gui::Label::update()
 
 void mjt::gui::Label::render(ShaderProgram* shader, Camera* camera)
 {
+	GLuint mvp = shader->getUniformLocation("mvp");
+	shader->setUniformMat4(mvp, camera->getMatrix() * m_transform->getFromWorld());
 
+	m_font->getTexture()->bind();
+
+	m_vao->bind();
+	glDrawElements(GL_TRIANGLES, m_verticesCount, GL_UNSIGNED_INT, 0);
+	m_vao->unbind();
+
+	m_font->getTexture()->unbind();
 }
 
 void mjt::gui::Label::buildMesh()
@@ -44,7 +57,7 @@ void mjt::gui::Label::buildMesh()
 
 	std::vector<GLfloat> vertices;
 	std::vector<GLfloat> uvs;
-	std::vector<GLfloat> indices;
+	std::vector<GLuint> indices;
 
 	mjt::utils::MeshData meshData;
 	Glyph currentGlyph;
@@ -63,5 +76,27 @@ void mjt::gui::Label::buildMesh()
 		indices.insert(indices.end(), meshData.indices.begin(), meshData.indices.end());
 	}
 
-	
+	m_vao = new VertexArrayObject();
+	m_vao->bind();
+
+	m_vao->enableAttribArray(0);
+	m_vbo = new VertexBufferObject();
+	m_vbo->bind();
+	m_vbo->setData(vertices);
+	m_vao->attribPointer(0, 3, GL_FLOAT, GL_FALSE, 0);
+
+	m_vao->enableAttribArray(1);
+	m_uvs = new VertexBufferObject();
+	m_uvs->bind();
+	m_uvs->setData(uvs);
+	m_vao->attribPointer(1, 2, GL_FLOAT, GL_FALSE, 0);
+	m_uvs->unbind();
+
+	m_indices = new IndicesBufferObject();
+	m_indices->bind();
+	m_indices->setData(indices);
+
+	m_vao->unbind();
+
+	m_verticesCount = indices.size();
 }

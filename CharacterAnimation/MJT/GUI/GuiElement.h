@@ -12,7 +12,7 @@ namespace mjt
 		protected:
 
 		public:
-			GuiElement() {}
+			GuiElement(): SceneNode() {}
 			~GuiElement() {}
 		};
 	}
