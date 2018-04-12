@@ -88,3 +88,8 @@ mjt::Texture * mjt::gui::Font::getTexture()
 {
 	return m_texture;
 }
+
+mjt::gui::Glyph mjt::gui::Font::getGlyph(const char c)
+{
+	return m_glyphs[c];
+}

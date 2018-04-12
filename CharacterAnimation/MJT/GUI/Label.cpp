@@ -1,4 +1,6 @@
 #include "Label.h"
+#include "../Utils/MeshUtils.h"
+#include <iostream>
 
 mjt::gui::Label::Label(): GuiElement()
 {
@@ -30,4 +32,18 @@ void mjt::gui::Label::update()
 void mjt::gui::Label::render(ShaderProgram* shader, Camera* camera)
 {
 
+}
+
+void mjt::gui::Label::buildMesh()
+{
+	if (m_font == nullptr)
+	{
+		std::cerr << "[LABEL] No font set for label: " << m_text << std::endl;
+		return;
+	}
+
+	for (const char* c = m_text.c_str(); *c; ++c)
+	{
+		
+	}
 }

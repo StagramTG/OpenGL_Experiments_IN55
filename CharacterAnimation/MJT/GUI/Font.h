@@ -28,6 +28,7 @@ namespace mjt
 			void loadToTexture();
 
 			Texture* getTexture();
+			Glyph getGlyph(const char c);
 		};
 	}
 }
