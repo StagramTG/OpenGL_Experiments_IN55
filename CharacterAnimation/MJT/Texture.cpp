@@ -74,7 +74,7 @@ namespace mjt
 
 	void Texture::bind()
 	{
-		glActiveTexture(GL_TEXTURE0);
+		glActiveTexture(GL_TEXTURE0 + m_id);
 		glBindTexture(GL_TEXTURE_2D, m_id);
 	}
 

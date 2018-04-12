@@ -9,27 +9,37 @@ mjt::gui::GuiManager::GuiManager(int width, int height)
 	camSettings.bottom = height;
 
 	camera = new OrthoCamera(camSettings);
-	camera->update();
+
+	m_shader = new ShaderProgram();
+	m_shader->init("Assets/Shaders/Fonts/vertex.glsl", "Assets/Shaders/Fonts/fragment.glsl");
 }
 
 mjt::gui::GuiManager::~GuiManager()
 {
+	delete camera;
+	delete m_shader;
 }
 
 void mjt::gui::GuiManager::update()
 {
+	camera->update();
+
 	for (GuiElement* element : m_elements)
 	{
 		element->update();
 	}
 }
 
-void mjt::gui::GuiManager::render(ShaderProgram* shader)
+void mjt::gui::GuiManager::render()
 {
+	m_shader->use();
+
 	for (GuiElement* element : m_elements)
 	{
-		element->render(shader, camera);
+		element->render(m_shader, camera);
 	}
+
+	m_shader->done();
 }
 
 bool mjt::gui::GuiManager::addElement(GuiElement * element)

@@ -14,7 +14,7 @@
 #include "MJT/ColoredModel.h"
 
 #include "MJT/GUI/GuiManager.h"
-#include "MJT/GUI/Font.h"
+#include "MJT/GUI/Label.h"
 
 class TestScene : public mjt::Scene 
 {
@@ -25,6 +25,8 @@ private:
 	mjt::AmbiantLight* m_ambiantLight;
 
 	mjt::gui::GuiManager* m_gui;
+	mjt::gui::Font* font;
+	mjt::gui::Label* label;
 
 public:
 	TestScene() : mjt::Scene("Main")
@@ -57,7 +59,11 @@ public:
 
 		m_ambiantLight = new mjt::AmbiantLight(ambiantLightData);
 
-		m_gui = new mjt::gui::GuiManager();
+		m_gui = new mjt::gui::GuiManager(1280, 720);
+		font = new mjt::gui::Font("Assets/Fonts/OpenSans.ttf", 18);
+		label = new mjt::gui::Label(font, "Test de texte !");
+
+		m_gui->addElement(label);
 	}
 
 	virtual void update()
@@ -83,6 +89,6 @@ public:
 
 		m_shader->done();
 
-		m_gui->render(m_shader);
+		m_gui->render();
 	}
 };

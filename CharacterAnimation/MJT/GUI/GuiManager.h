@@ -5,6 +5,7 @@
 
 #include "GuiElement.h"
 #include "../OrthoCamera.h"
+#include "../ShaderProgram.h"
 
 namespace mjt 
 {
@@ -13,6 +14,7 @@ namespace mjt
 		class GuiManager
 		{
 		private:
+			ShaderProgram * m_shader;
 			std::vector<GuiElement*> m_elements;
 			OrthoCamera* camera;
 
@@ -21,7 +23,7 @@ namespace mjt
 			~GuiManager();
 
 			void update();
-			void render(ShaderProgram* shader);
+			void render();
 
 			bool addElement(GuiElement* element);
 			bool removeElement(GuiElement* element);
