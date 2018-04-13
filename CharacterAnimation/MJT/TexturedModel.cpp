@@ -65,7 +65,6 @@ namespace mjt
 		shader->setUniformSubroutine(GL_FRAGMENT_SHADER, subFragmentLoc);
 
 		m_texture->bind();
-
 		GLuint texture = shader->getUniformLocation("texture");
 		shader->setUniformInt(texture, m_texture->getId());
 

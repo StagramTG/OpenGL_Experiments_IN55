@@ -1,5 +1,7 @@
 #include "GuiManager.h"
 
+#include <iostream>
+
 mjt::gui::GuiManager::GuiManager(int width, int height)
 {
 	CameraSettings camSettings;
@@ -38,7 +40,7 @@ void mjt::gui::GuiManager::render()
 	{
 		element->render(m_shader, camera);
 	}
-
+	
 	m_shader->done();
 }
 

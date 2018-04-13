@@ -38,7 +38,7 @@ void mjt::gui::Font::loadFromFile(const char * fontFile, int fontSize)
 
 	FT_Set_Pixel_Sizes(face, 0, fontSize);
 
-	m_texture = new mjt::Texture(512, 512);
+	m_texture = new mjt::Texture(512, 512, GL_RED);
 	m_texture->bind();
 
 	GLint x = 0, y = 0, nextY = 0;

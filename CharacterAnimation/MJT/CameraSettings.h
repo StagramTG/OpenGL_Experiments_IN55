@@ -12,7 +12,7 @@ namespace mjt
 		float znear = 0.1f;
 		float zfar = 100.f;
 
-		glm::vec3 position = glm::vec3(0.f, 0.f, 0.f);
+		glm::vec3 position = glm::vec3(0.f, 0.f, -1.f);
 		glm::vec3 target = glm::vec3(0.f, 0.f, 0.f);
 
 		int left = 0;

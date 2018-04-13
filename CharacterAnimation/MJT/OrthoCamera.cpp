@@ -19,9 +19,5 @@ void mjt::OrthoCamera::update()
 		1.f
 	);
 
-	m_view = glm::lookAt(
-		m_settings.position,
-		m_settings.target,
-		glm::vec3(0, 1, 0)
-	);
+	m_view = glm::mat4(1.0);
 }

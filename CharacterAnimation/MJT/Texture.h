@@ -16,7 +16,7 @@ namespace mjt
 		// Only reference a texture created outside this class
 		Texture(GLuint nativeHandle);
 		// Create an empty texture
-		Texture(GLuint width, GLuint height);
+		Texture(GLuint width, GLuint height, GLint format);
 
 		~Texture();
 

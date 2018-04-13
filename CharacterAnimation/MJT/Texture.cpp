@@ -43,13 +43,13 @@ namespace mjt
 		m_id = nativeHandle;
 	}
 
-	Texture::Texture(GLuint width, GLuint height)
+	Texture::Texture(GLuint width, GLuint height, GLint format)
 	{
 		glGenTextures(1, &m_id);
 		bind();
 
 		// Create a texture with no data
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+		glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, NULL);
 
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);

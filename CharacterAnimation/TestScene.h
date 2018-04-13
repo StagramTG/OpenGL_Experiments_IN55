@@ -37,6 +37,10 @@ public:
 	{
 		delete m_shader;
 		delete m_camera;
+
+		delete label;
+		delete font;
+		delete m_gui;
 	}
 
 	void init()
@@ -69,10 +73,9 @@ public:
 	virtual void update()
 	{
 		m_camera->update();
+		m_gui->update();
 
 		mjt::Scene::update();
-
-		m_gui->update();
 	}
 
 	virtual void render(mjt::ShaderProgram* shader, mjt::Camera* camera)
@@ -87,7 +90,7 @@ public:
 
 		mjt::Scene::render(m_shader, m_camera);
 
-		m_shader->done();
+		//m_shader->done();
 
 		m_gui->render();
 	}

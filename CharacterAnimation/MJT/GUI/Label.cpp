@@ -12,9 +12,6 @@ mjt::gui::Label::Label(Font* font, std::string text) : GuiElement()
 	m_font = font;
 
 	buildMesh();
-
-	m_transform->setPosition(glm::vec3(100.f, 100.f, 0));
-	m_transform->setScale(glm::vec3(100.f, 100.f, 0));
 }
 
 mjt::gui::Label::~Label()
@@ -34,15 +31,17 @@ void mjt::gui::Label::setText(std::string text)
 
 void mjt::gui::Label::update()
 {
+	GuiElement::update();
 }
 
 void mjt::gui::Label::render(ShaderProgram* shader, Camera* camera)
 {
+	GuiElement::render(shader, camera);
+
 	GLuint mvp = shader->getUniformLocation("mvp");
 	shader->setUniformMat4(mvp, camera->getMatrix() * m_transform->getFromWorld());
 	
 	m_font->getTexture()->bind();
-	
 	GLuint texture = shader->getUniformLocation("texture");
 	shader->setUniformInt(texture, m_font->getTexture()->getId());
 
@@ -74,10 +73,9 @@ void mjt::gui::Label::buildMesh()
 		currentGlyph = m_font->getGlyph(*c);
 		meshData = mjt::utils::MeshUtils::createSquare(
 			x, currentGlyph.bearing.y, currentGlyph.size.x, currentGlyph.size.y,
-			currentGlyph.texPosition.x, currentGlyph.texPosition.y, currentGlyph.size.x, currentGlyph.size.y
+			currentGlyph.texPosition.x, currentGlyph.texPosition.y, currentGlyph.size.x, currentGlyph.size.y,
+			indices.size()
 		);
-
-		std::cerr << "[LABEL] " << currentGlyph.advance << std::endl;
 
 		vertices.insert(vertices.end(), meshData.vertices.begin(), meshData.vertices.end());
 		uvs.insert(uvs.end(), meshData.uvs.begin(), meshData.uvs.end());
@@ -109,4 +107,5 @@ void mjt::gui::Label::buildMesh()
 	m_vao->unbind();
 
 	m_verticesCount = indices.size();
+	std::cout << m_verticesCount << std::endl;
 }

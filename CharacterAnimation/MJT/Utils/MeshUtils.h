@@ -20,7 +20,8 @@ namespace mjt
 			// Create a square model composed of 4 vertices
 			static MeshData createSquare(
 				GLfloat x, GLfloat y, GLfloat width, GLfloat height,
-				GLfloat texX = 0, GLfloat texY = 0, GLfloat texWidth = 1, GLfloat texHeight = 1
+				GLfloat texX = 0, GLfloat texY = 0, GLfloat texWidth = 1, GLfloat texHeight = 1,
+				int indiceOffset = 0
 			);
 		};
 	}
