@@ -15,6 +15,7 @@ namespace mjt
 		sf::RenderWindow m_window;
 		std::vector<Scene*> m_scenes;
 		Scene* m_activeScene;
+		sf::Vector2i lastMousePosition = sf::Vector2i(0, 0);
 
 		/*Methods*/
 		void initWindow(int width, int height, const char* title);

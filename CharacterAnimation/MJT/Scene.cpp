@@ -22,6 +22,16 @@ namespace mjt
 		m_rootNode->render(shader, camera);
 	}
 
+	void Scene::move_camera(sf::Keyboard::Key input)
+	{
+		m_rootNode->move_camera(input);
+	}
+
+	void Scene::move_camera(int x, int y)
+	{
+		m_rootNode->move_camera(x, y);
+	}
+
 	const char * Scene::getName()
 	{
 		return m_name;

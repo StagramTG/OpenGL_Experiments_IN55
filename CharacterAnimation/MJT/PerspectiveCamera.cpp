@@ -16,7 +16,7 @@ namespace mjt
 		m_view = glm::lookAt(
 			m_settings.position,
 			m_settings.target,
-			glm::vec3(0, 1, 0)
+			m_settings.up
 		);
 
 		m_projection = glm::perspective(

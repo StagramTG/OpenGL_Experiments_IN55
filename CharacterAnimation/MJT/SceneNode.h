@@ -21,6 +21,9 @@ namespace mjt
 		virtual void update();
 		virtual void render(ShaderProgram* shader, Camera* camera);
 
+		virtual void move_camera(sf::Keyboard::Key input);
+		virtual void move_camera(int x, int y);
+
 		void addChild(SceneNode* child);
 		void removeChild(SceneNode* child);
 

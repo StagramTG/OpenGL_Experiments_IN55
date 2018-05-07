@@ -34,6 +34,22 @@ namespace mjt
 		}
 	}
 
+	void SceneNode::move_camera(sf::Keyboard::Key input)
+	{
+		for (SceneNode* child : m_children)
+		{
+			child->move_camera(input);
+		}
+	}
+
+	void SceneNode::move_camera(int x, int y)
+	{
+		for (SceneNode* child : m_children)
+		{
+			child->move_camera(x, y);
+		}
+	}
+
 	void SceneNode::addChild(SceneNode * child)
 	{
 		if (child != nullptr)

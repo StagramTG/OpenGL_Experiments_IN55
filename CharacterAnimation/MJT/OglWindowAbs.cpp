@@ -34,6 +34,9 @@ namespace mjt
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 		glCullFace(GL_BACK);
+
+		lastMousePosition = sf::Vector2i(m_window.getSize().x / 2, m_window.getSize().y / 2);
+		sf::Mouse::setPosition(lastMousePosition, m_window);
 	}
 
 	OglWindowAbs::OglWindowAbs()
@@ -61,6 +64,20 @@ namespace mjt
 			{
 				if (event.type == sf::Event::Closed)
 					m_window.close();
+
+				if (event.type == sf::Event::KeyPressed)
+					if (event.key.code == sf::Keyboard::Escape)
+						m_window.close();
+					else
+						m_activeScene->move_camera(event.key.code);
+
+				if (event.type == sf::Event::MouseMoved)
+				{
+					sf::Vector2i currentMousePosition(event.mouseMove.x, event.mouseMove.y);
+					sf::Vector2i deltaPosition(currentMousePosition - lastMousePosition);
+					lastMousePosition = currentMousePosition;
+					m_activeScene->move_camera(deltaPosition.x, deltaPosition.y);
+				}
 			}
 
 			if (m_activeScene != nullptr)

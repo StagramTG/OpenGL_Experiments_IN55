@@ -55,7 +55,7 @@ public:
 		settings.znear = 1.f;
 
 		m_camera = new mjt::PerspectiveCamera(settings);
-		m_camera->setPosition(glm::vec3(2.f, 2.f, 3.f));
+		m_camera->setTarget(glm::vec3(0.f, 0.f, 0.f));
 
 		mjt::AmbiantLightData ambiantLightData;
 		ambiantLightData.intensity = 0.2f;
@@ -93,5 +93,15 @@ public:
 		//m_shader->done();
 
 		m_gui->render();
+	}
+
+	virtual void move_camera(sf::Keyboard::Key input)
+	{
+		m_camera->move(input);
+	}
+
+	virtual void move_camera(int x, int y)
+	{
+		m_camera->move(x, y);
 	}
 };

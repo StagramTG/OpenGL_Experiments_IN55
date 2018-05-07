@@ -1,6 +1,7 @@
 #pragma once
 
 #include <glm\gtc\matrix_transform.hpp>
+#include <SFML\Graphics.hpp>
 #include "CameraSettings.h"
 
 namespace mjt
@@ -24,10 +25,21 @@ namespace mjt
 		void setTarget(glm::vec3 target);
 		glm::vec3 getTarget();
 
-		void move(glm::vec3 move);
+		float getSensitivity();
+		void setSensitivity(float sensitivity);
 
-		/*Method to implement to calculate view and projections matrices*/
+		float getSpeed();
+		void setSpeed(float vitesse);
+
+		void move(glm::vec3 move);
+		//Changement position caméra avec clavier directionnel
+		void move(sf::Keyboard::Key input);
+		//Changement orientation caméra avec mouvement souris
+		void move(int x, int y);
+
 		virtual void update() = 0;
 		glm::mat4 getMatrix();
+
+		void updateCameraVect();
 	};
 }
